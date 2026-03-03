@@ -90,3 +90,21 @@
   margin-top: 20px;
   font-size: 18px;
 }
+@media (max-width: 768px) {
+  .card-container,
+  .book-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #d8cdea;
+  margin-top: 60px;
+}
