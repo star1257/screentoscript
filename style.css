@@ -176,7 +176,7 @@
   letter-spacing: 2px;
 }
 
-/* ABOUT PAGE */
+/* ABOUT PAGE (used for displaying the screenshot data) */
 .about {
   max-width: 800px;
   margin: auto;
@@ -186,49 +186,38 @@
   border-radius: 8px;
 }
 
+.about h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.about-item {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.about-item h3 {
+  font-size: 1.6em;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.about-item p {
+  margin: 8px 0;
+}
+
+.about-item strong {
+  display: inline-block;
+  width: 150px;
+  color: #555;
+}
+
 /* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
   background-color: #d8cdea;
   margin-top: 60px;
-}
-
-/* Additional styling for the about page */
-.about h3 {
-    margin-top: 30px;
-    margin-bottom: 15px;
-    font-size: 1.4em;
-    color: #333;
-}
-
-.about ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
-
-.about ul ul {
-    list-style-type: circle;
-    margin-left: 30px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.about li {
-    margin-bottom: 5px;
-    line-height: 1.5;
-}
-
-/* Style for empty list items (the dashes) – they will appear as blank lines */
-.about li:empty {
-    list-style-type: none;
-    height: 1em;          /* preserve some vertical space */
-}
-
-/* Horizontal rule styling */
-.about hr {
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 30px 0;
 }
