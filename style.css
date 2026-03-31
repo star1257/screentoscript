@@ -1,232 +1,90 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 /* NAVBAR */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background-color: #d8cdea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #d8cdea;
 }
 
 .navbar a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
 }
 
 /* CONTAINER */
 .container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
 }
 
 /* HERO SECTION */
 .hero {
-  text-align: center;
-  padding: 60px 20px;
-  background-color: #f5f0fa;
-  margin-bottom: 40px;
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f5f0fa;
+    margin-bottom: 40px;
 }
 
 .hero h2 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
+    font-size: 2.5em;
+    margin-bottom: 10px;
 }
 
-.hero p {
-  font-size: 1.2em;
-  color: #555;
+.featured-image {
+    width: 100%;
+    height: auto;
+    max-width: 800px; /* Adjust as needed */
+    margin: 20px 0;
 }
 
-/* FEATURED WORKS (cards on homepage) */
-.featured {
-  text-align: center;
+/* FEATURED COMPARISONS */
+.featured-comparisons {
+    text-align: center;
 }
 
-.featured h3 {
-  font-size: 2em;
-  margin-bottom: 30px;
+.featured-comparisons h3 {
+    font-size: 2em;
+    margin-bottom: 30px;
 }
 
-.card-container {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+.comparison-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
-.card {
-  width: 250px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.3s;
-  background: white;
+.comparison-item {
+    width: 250px;
+    text-align: center;
 }
 
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.comparison-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
-.card a {
-  text-decoration: none;
-  color: #333;
-}
-
-.card img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
-
-.card h4 {
-  padding: 15px;
-  background: #f9f9f9;
-}
-
-/* BOOK GRID (books.html) */
-.book-grid {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
-
-.book-card {
-  width: 250px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  text-decoration: none;
-  color: #333;
-  transition: transform 0.3s;
-  background: white;
-}
-
-.book-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.book-card img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
-
-.book-card h3 {
-  padding: 15px;
-  background: #f9f9f9;
-  text-align: center;
-}
-
-/* BOOK DETAIL PAGE (for individual books/films) */
-.book-detail {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 20px;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  background: #fafafa;
-}
-
-.detail-layout {
-  display: flex;
-  gap: 30px;
-  align-items: flex-start;
-}
-
-.detail-layout img {
-  width: 250px;
-  height: auto;
-  border-radius: 4px;
-}
-
-.text h2 {
-  margin-bottom: 15px;
-}
-
-.text p {
-  margin-bottom: 10px;
-  line-height: 1.6;
-}
-
-.ratings {
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid #ccc;
-  display: flex;
-  gap: 30px;
-  font-size: 1.1em;
-}
-
-.stars {
-  color: gold;
-  font-size: 1.2em;
-  letter-spacing: 2px;
-}
-
-/* ABOUT PAGE – used to display the three metadata items */
-.about {
-  max-width: 800px;
-  margin: auto;
-  padding: 40px;
-  line-height: 1.6;
-  background: #f9f9f9;
-  border-radius: 8px;
-}
-
-.about h2 {
-  font-size: 2em;
-  margin-bottom: 30px;
-  color: #333;
-  text-align: center;
-}
-
-.about-item {
-  margin-bottom: 40px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid #ddd;
-}
-
-.about-item:last-child {
-  border-bottom: none;
-}
-
-.about-item h3 {
-  font-size: 1.8em;
-  color: #2c3e50;
-  margin-bottom: 20px;
-}
-
-.about-item p {
-  margin: 8px 0;
-  display: flex;
-  align-items: baseline;
-}
-
-.about-item strong {
-  display: inline-block;
-  width: 180px;
-  color: #555;
-  font-weight: 600;
+.comparison-item p {
+    margin-top: 10px;
+    font-size: 1em;
 }
 
 /* FOOTER */
 footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #d8cdea;
-  margin-top: 60px;
+    text-align: center;
+    padding: 20px;
+    background-color: #d8cdea;
+    margin-top: 60px;
 }
-
