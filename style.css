@@ -1,4 +1,4 @@
-
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -82,46 +82,48 @@
     font-size: 1em;
 }
 
-/* FILM ADAPTATIONS SECTION */
-.film-adaptations {
-    display: flex;
-    align-items: flex-start;
-    gap: 40px;
-    margin-top: 40px;
+/* SHARED PAGE TITLE */
+.page-title {
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
-/* LEFT SIDE (IMAGES) */
-.left-column {
-    flex: 1;
+/* FILMS / BOOKS LIST */
+.media-list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
 }
 
-.film-thumbnail img {
-    width: 100%;
-    max-width: 300px;
+.media-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background-color: #f5f0fa;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.media-item img {
+    width: 220px;
     height: auto;
     border-radius: 8px;
+    object-fit: cover;
 }
 
-/* RIGHT SIDE (TEXT) */
-.right-column {
+.media-text {
     flex: 1;
 }
 
-.right-column h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+.media-text h3 {
+    font-size: 1.8em;
+    margin-bottom: 12px;
 }
 
-.book-item {
-    margin-bottom: 30px;
-}
-
-.book-item p {
-    font-size: 1.2em;
-    margin-bottom: 10px;
+.media-text p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
 }
 
 /* BUTTON */
@@ -133,6 +135,7 @@
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
+    font-weight: bold;
 }
 
 .button:hover {
@@ -145,4 +148,17 @@ footer {
     padding: 20px;
     background-color: #d8cdea;
     margin-top: 60px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .media-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .media-item img {
+        width: 100%;
+        max-width: 300px;
+    }
 }
