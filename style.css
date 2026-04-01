@@ -150,15 +150,4 @@ footer {
     margin-top: 60px;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-    .media-item {
-        flex-direction: column;
-        text-align: center;
-    }
 
-    .media-item img {
-        width: 100%;
-        max-width: 300px;
-    }
-}
