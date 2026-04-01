@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ScreenToScript - About</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,71 +12,79 @@
     <h1>ScreenToScript</h1>
     <nav>
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
         <a href="books.html">Books</a>
+        <a href="filmAdaptation.html">Films</a>
+        <a href="about.html">About</a>
     </nav>
 </header>
 
-<main class="container">
-    <section class="about">
-        <h2>📋 Detailed Collection</h2>
+<main>
+    <!-- ABOUT INTRO -->
+    <section class="about-hero">
+        <h2>ABOUT</h2>
 
-        <!-- 1. The Great Gatsby (book) -->
-        <div class="about-item">
-            <h3>The Great Gatsby</h3>
-            <p><strong>Subtitle:</strong> A Novel by F. Scott Fitzgerald</p>
-            <p><strong>Author:</strong> F. Scott Fitzgerald</p>
-            <p><strong>Publisher:</strong> Scribner's</p>
-            <p><strong>Publication Date:</strong> 1925</p>
-            <p><strong>ISBN:</strong> 978-0-684-82701-2</p>
-            <p><strong>Price:</strong> $25.00</p>
-            <p><strong>Pages:</strong> 256 pages</p>
-            <p><strong>Printing:</strong> Paperback</p>
-            <p><strong>Language:</strong> English</p>
-            <p><strong>Cover:</strong> Hardcover with dust jacket</p>
-            <p><strong>Design:</strong> White background with black text and illustrations</p>
-            <p><strong>Features:</strong> Includes a brief biography of the author, a synopsis of the novel, and a list of characters.</p>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>About This Project</h3>
+                <p>
+                    This website explores the connection between books and their film
+                    adaptations. It highlights well-known stories and shows how they
+                    have been transformed from page to screen.
+                </p>
+                <p>
+                    ScreenToScript is designed to help readers and film lovers compare
+                    original texts with their cinematic versions in a simple and
+                    engaging way.
+                </p>
+            </div>
+
+            <div class="about-image">
+                <img src="images/books-stack.jpg" alt="Stack of books">
+            </div>
+        </div>
+    </section>
+
+    <!-- UPDATES SECTION -->
+    <section class="updates-section">
+        <div class="updates-wrapper">
+            <div class="updates-card">
+                <h3>Get Weekly Updates</h3>
+                <p>Be the first to hear about new comparisons, features, and reading picks.</p>
+
+                <form class="updates-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Sign Up</button>
+                </form>
+
+                <small>We care about your privacy.</small>
+            </div>
+
+            <div class="updates-image">
+                <img src="images/cactus.jpg" alt="Decorative background">
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / INFO -->
+    <section class="about-footer-info">
+        <div class="info-box">
+            <h4>Address</h4>
+            <p>123 Reading Street<br>Booktown, London</p>
         </div>
 
-        <!-- 2. Bringing books and films together (book) -->
-        <div class="about-item">
-            <h3>Bringing books and films together</h3>
-            <p><strong>Subtitle:</strong> How to Make Movies from Books</p>
-            <p><strong>Author:</strong> Ray Bradbury</p>
-            <p><strong>Publisher:</strong> HarperCollins</p>
-            <p><strong>Publication Date:</strong> 1953</p>
-            <p><strong>ISBN:</strong> 978-0-06-112500-4</p>
-            <p><strong>Price:</strong> $15.95</p>
-            <p><strong>Pages:</strong> 288 pages</p>
-            <p><strong>Printing:</strong> Paperback</p>
-            <p><strong>Language:</strong> English</p>
-            <p><strong>Cover:</strong> Hardcover with dust jacket</p>
-            <p><strong>Design:</strong> White background with black text and illustrations</p>
-            <p><strong>Features:</strong> Includes a brief biography of the author, a synopsis of the novel, and a list of characters.</p>
+        <div class="info-box">
+            <h4>Phone</h4>
+            <p>01234 567890</p>
         </div>
 
-        <!-- 3. Romeo and Juliet (1968) film -->
-        <div class="about-item">
-            <h3>Romeo and Juliet (1968)</h3>
-            <p><strong>Subtitle:</strong> A Film by Baz Luhrmann</p>
-            <p><strong>Director:</strong> Baz Luhrmann</p>
-            <p><strong>Producer:</strong> Baz Luhrmann</p>
-            <p><strong>Screenplay:</strong> William Shakespeare</p>
-            <p><strong>Based on:</strong> William Shakespeare's play</p>
-            <p><strong>Release Date:</strong> July 1996</p>
-            <p><strong>Runtime:</strong> 156 minutes</p>
-            <p><strong>Rating:</strong> PG-13</p>
-            <p><strong>Genre:</strong> Drama, Romance, Fantasy</p>
-            <p><strong>Language:</strong> English</p>
-            <p><strong>Production Company:</strong> Paramount Pictures</p>
-            <p><strong>Distributor:</strong> Paramount Pictures</p>
-            <p><strong>Cinematography:</strong> Roger Deakins</p>
-            <p><strong>Art Direction:</strong> John Alton</p>
-            <p><strong>Costume Design:</strong> Gillian Robotham</p>
-            <p><strong>Music:</strong> Michael Giacchino</p>
-            <p><strong>Cast:</strong> Leonardo DiCaprio as Romeo, Claire Danes as Juliet, Joel Edgerton as Mercutio, Paul Bettany as Benvolio, James Franco as Tybalt, Shia LaBeouf as Mercutio, Zoë Kravitz as Rosaline, Timothee Chalamet as Paris, Olivia Williams as Juliet, and Aaron Taylor-Johnson as Friar Laurence.</p>
-            <p><strong>Production Year:</strong> 1996</p>
-            <p><strong>Box Office:</strong> $100 million</p>
+        <div class="info-box">
+            <h4>Email</h4>
+            <p>info@screentoscript.com</p>
+        </div>
+
+        <div class="info-box">
+            <h4>Follow</h4>
+            <p>Instagram • Twitter • Facebook</p>
         </div>
     </section>
 </main>
