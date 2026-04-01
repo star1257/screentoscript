@@ -29,7 +29,7 @@
     padding: 20px;
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero {
     text-align: center;
     padding: 60px 20px;
@@ -79,12 +79,6 @@
     display: block;
 }
 
-.comparison-item p {
-    margin-top: 10px;
-    font-size: 1em;
-    text-align: center;
-}
-
 /* PAGE TITLE */
 .page-title {
     font-size: 2em;
@@ -92,7 +86,7 @@
     text-align: center;
 }
 
-/* FILMS + BOOKS LAYOUT */
+/* BOOKS + FILMS */
 .media-list {
     display: flex;
     flex-direction: column;
@@ -108,10 +102,9 @@
     border-radius: 10px;
 }
 
-/* FORCE SAME SIZE FOR BOOK/FILM PAGE IMAGES */
 .media-item img {
-    width: 220px !important;
-    height: 300px !important;
+    width: 220px;
+    height: 300px;
     min-width: 220px;
     max-width: 220px;
     min-height: 300px;
@@ -121,7 +114,6 @@
     display: block;
 }
 
-/* TEXT */
 .media-text {
     flex: 1;
 }
@@ -151,7 +143,7 @@
     background-color: #c6b3e0;
 }
 
-/* ABOUT PAGE */
+/* ABOUT */
 .about-hero {
     text-align: center;
     padding: 60px 20px;
@@ -176,16 +168,6 @@
     text-align: left;
 }
 
-.about-text h3 {
-    margin-bottom: 15px;
-}
-
-.about-text p {
-    line-height: 1.7;
-    margin-bottom: 15px;
-    color: #444;
-}
-
 .about-image img {
     width: 220px;
     height: 280px;
@@ -193,7 +175,7 @@
     display: block;
 }
 
-/* UPDATES SECTION */
+/* UPDATES */
 .updates-section {
     background-color: #ece8ea;
     padding: 60px 20px;
@@ -215,16 +197,6 @@
     left: 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 2;
-}
-
-.updates-card h3 {
-    margin-bottom: 10px;
-}
-
-.updates-card p {
-    margin-bottom: 15px;
-    color: #555;
-    line-height: 1.5;
 }
 
 .updates-form {
@@ -258,7 +230,7 @@
     display: block;
 }
 
-/* INFO SECTION */
+/* INFO */
 .about-footer-info {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -274,15 +246,6 @@
 
 .info-box:last-child {
     border-right: none;
-}
-
-.info-box h4 {
-    margin-bottom: 10px;
-}
-
-.info-box p {
-    line-height: 1.6;
-    color: #555;
 }
 
 /* COMPARISON PAGES */
@@ -331,6 +294,8 @@
 .image-box img {
     width: 100%;
     height: 320px;
+    min-height: 320px;
+    max-height: 320px;
     object-fit: cover;
     display: block;
 }
@@ -390,8 +355,8 @@ footer {
     }
 
     .media-item img {
-        width: 140px !important;
-        height: 200px !important;
+        width: 140px;
+        height: 200px;
         min-width: 140px;
         max-width: 140px;
         min-height: 200px;
@@ -425,12 +390,10 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .comparison-box {
-        min-height: auto;
-    }
-
     .image-box img {
         height: 220px;
+        min-height: 220px;
+        max-height: 220px;
     }
 
     .rating-section {
