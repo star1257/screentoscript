@@ -45,6 +45,8 @@
 .featured-image {
     width: 100%;
     max-width: 800px;
+    height: 400px;
+    object-fit: cover;
     margin: 20px 0;
 }
 
@@ -70,8 +72,17 @@
 }
 
 .comparison-item img {
-    width: 100%;
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
     border-radius: 8px;
+    display: block;
+}
+
+.comparison-item p {
+    margin-top: 10px;
+    font-size: 1em;
+    text-align: center;
 }
 
 /* PAGE TITLE */
@@ -97,12 +108,17 @@
     border-radius: 10px;
 }
 
-/* ✅ FIX: ALL IMAGES SAME SIZE */
+/* FORCE SAME SIZE FOR BOOK/FILM PAGE IMAGES */
 .media-item img {
-    width: 220px;
-    height: 300px;
-    object-fit: cover; /* keeps images looking good */
+    width: 220px !important;
+    height: 300px !important;
+    min-width: 220px;
+    max-width: 220px;
+    min-height: 300px;
+    max-height: 300px;
+    object-fit: cover;
     border-radius: 8px;
+    display: block;
 }
 
 /* TEXT */
@@ -117,6 +133,7 @@
 
 .media-text p {
     margin-bottom: 15px;
+    line-height: 1.6;
 }
 
 /* BUTTON */
@@ -159,10 +176,21 @@
     text-align: left;
 }
 
+.about-text h3 {
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: #444;
+}
+
 .about-image img {
     width: 220px;
     height: 280px;
     object-fit: cover;
+    display: block;
 }
 
 /* UPDATES SECTION */
@@ -185,7 +213,18 @@
     width: 350px;
     position: absolute;
     left: 0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.updates-card h3 {
+    margin-bottom: 10px;
+}
+
+.updates-card p {
+    margin-bottom: 15px;
+    color: #555;
+    line-height: 1.5;
 }
 
 .updates-form {
@@ -204,6 +243,7 @@
     background: #2d6cdf;
     color: white;
     border: none;
+    cursor: pointer;
 }
 
 .updates-image {
@@ -215,6 +255,7 @@
     width: 100%;
     height: 250px;
     object-fit: cover;
+    display: block;
 }
 
 /* INFO SECTION */
@@ -222,6 +263,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     background: #f7f7f7;
+    border-top: 1px solid #ddd;
 }
 
 .info-box {
@@ -234,6 +276,104 @@
     border-right: none;
 }
 
+.info-box h4 {
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    line-height: 1.6;
+    color: #555;
+}
+
+/* COMPARISON PAGES */
+.comparison-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.comparison-title {
+    text-align: center;
+    padding: 50px 20px 40px;
+}
+
+.small-heading {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.comparison-title h2 {
+    font-size: 2em;
+    line-height: 1.3;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.comparison-box {
+    min-height: 320px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.image-box {
+    padding: 0;
+}
+
+.image-box img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+.text-box {
+    flex-direction: column;
+    text-align: center;
+}
+
+.text-box h3 {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+}
+
+.text-box p {
+    max-width: 350px;
+    line-height: 1.7;
+    color: #444;
+    font-size: 0.95em;
+}
+
+.rating-section {
+    background-color: #d8cdea;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px 30px 30px;
+}
+
+.rating-box {
+    text-align: center;
+}
+
+.rating-box h4 {
+    margin-bottom: 12px;
+    font-size: 1em;
+}
+
+.stars {
+    font-size: 3em;
+    color: #b8b8b8;
+    letter-spacing: 6px;
+}
+
 /* FOOTER */
 footer {
     text-align: center;
@@ -244,14 +384,18 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-
     .media-item {
-        flex-direction: row; /* keeps side-by-side */
+        flex-direction: row;
+        align-items: center;
     }
 
     .media-item img {
-        width: 140px;
-        height: 200px;
+        width: 140px !important;
+        height: 200px !important;
+        min-width: 140px;
+        max-width: 140px;
+        min-height: 200px;
+        max-height: 200px;
     }
 
     .about-content {
@@ -276,5 +420,21 @@ footer {
     .about-footer-info {
         grid-template-columns: 1fr 1fr;
     }
-}
 
+    .comparison-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .comparison-box {
+        min-height: auto;
+    }
+
+    .image-box img {
+        height: 220px;
+    }
+
+    .rating-section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
