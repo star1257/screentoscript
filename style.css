@@ -97,11 +97,15 @@
     border-radius: 10px;
 }
 
+/* ✅ FIX: ALL IMAGES SAME SIZE */
 .media-item img {
     width: 220px;
+    height: 300px;
+    object-fit: cover; /* keeps images looking good */
     border-radius: 8px;
 }
 
+/* TEXT */
 .media-text {
     flex: 1;
 }
@@ -242,11 +246,12 @@ footer {
 @media (max-width: 768px) {
 
     .media-item {
-        flex-direction: row; /* KEEP SIDE BY SIDE */
+        flex-direction: row; /* keeps side-by-side */
     }
 
     .media-item img {
         width: 140px;
+        height: 200px;
     }
 
     .about-content {
