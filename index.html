@@ -1,68 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ScreenToScript - Home</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScreenToScript - Home</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="navbar">
+
+<header class="navbar">
     <h1>ScreenToScript</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="books.html">Books</a>
-      <a href="filmAdaptation.html">Films</a>
-      <a href="about.html">About</a>
+        <a href="index.html">Home</a>
+        <a href="books.html">Books</a>
+        <a href="filmAdaptation.html">Films</a>
+        <a href="about.html">About</a>
     </nav>
-  </header>
+</header>
 
-  <main class="container">
+<main class="container">
     <section class="hero">
-      <h2>Bringing books and films together</h2>
-
-      <!-- Slideshow -->
-      <div class="slideshow">
-        <div class="slides">
-          <img src="firstImage.jpg" alt="Old Stone Building">
-          <img src="bookStack.jpg" alt="Stack of Books">
-          <img src="flowers.jpg" alt="Flowers Background">
+        <h2>Bringing books and films together</h2>
+        <div class="slideshow">
+            <div class="slides">
+                <div class="slide"><img src="firstImage.jpg" alt="Old Stone Building"></div>
+                <div class="slide"><img src="bookStack.jpg" alt="Stack of books"></div>
+                <div class="slide"><img src="flowers.jpg" alt="Flowers"></div>
+            </div>
+            <button class="slide-btn prev" id="prev" aria-label="Previous slide">&#10094;</button>
+            <button class="slide-btn next" id="next" aria-label="Next slide">&#10095;</button>
         </div>
-
-        <div class="slide-buttons">
-          <button id="prev">&#10094;</button>
-          <button id="next">&#10095;</button>
-        </div>
-      </div>
     </section>
 
-    <!-- Featured Comparisons Section -->
     <section class="featured-comparisons">
-      <h3>Featured Comparisons</h3>
-      <div class="comparison-container">
-        <div class="comparison-item" onclick="window.location.href='romeoJuliet.html'">
-          <img src="book1.jpg" alt="Romeo and Juliet">
-          <p>Romeo and Juliet</p>
+        <h3>Featured Comparisons</h3>
+        <div class="comparison-container">
+            <div class="comparison-item" onclick="window.location.href='romeoJuliet.html'">
+                <img src="book1.jpg" alt="Romeo and Juliet">
+                <p>Romeo and Juliet</p>
+            </div>
+            <div class="comparison-item" onclick="window.location.href='pridePrejudice.html'">
+                <img src="book2.jpg" alt="Pride and Prejudice">
+                <p>Pride and Prejudice</p>
+            </div>
+            <div class="comparison-item" onclick="window.location.href='#'">
+                <img src="book3.jpg" alt="The Great Gatsby">
+                <p>The Great Gatsby</p>
+            </div>
         </div>
-
-        <div class="comparison-item" onclick="window.location.href='pridePrejudice.html'">
-          <img src="book2.jpg" alt="Pride and Prejudice">
-          <p>Pride and Prejudice</p>
-        </div>
-
-        <div class="comparison-item" onclick="window.location.href='#'">
-          <img src="book3.jpg" alt="The Great Gatsby">
-          <p>The Great Gatsby</p>
-        </div>
-      </div>
     </section>
-  </main>
+</main>
 
-  <footer>
+<footer>
     <p>© 2026 ScreenToScript</p>
-  </footer>
+</footer>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

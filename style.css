@@ -62,6 +62,7 @@ img {
 
 .slideshow {
     position: relative;
+    width: 100%;
     max-width: 900px;
     height: 350px;
     margin: 0 auto;
@@ -72,15 +73,20 @@ img {
 .slides {
     display: flex;
     height: 100%;
-    width: 300%;
     transition: transform 0.6s ease;
+    will-change: transform;
 }
 
-.slides img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
+.slide {
+    min-width: 100%;
+    height: 100%;
     flex: 0 0 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .slide-btn {
@@ -88,7 +94,7 @@ img {
     top: 50%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.35);
-    color: #fff;
+    color: white;
     border: none;
     padding: 10px 14px;
     cursor: pointer;
@@ -284,27 +290,26 @@ img {
     font-size: 1em;
 }
 
-.stars {
+.star-rating {
     display: inline-flex;
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
     gap: 2px;
+    outline: none;
 }
 
-.stars input {
-    display: none;
-}
-
-.stars label {
-    position: relative;
+.star-rating button {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
     width: 1em;
     height: 1em;
-    cursor: pointer;
-    user-select: none;
+    position: relative;
+    padding: 0;
 }
 
-.stars label::before {
+.star-rating button::before {
     content: "★";
     position: absolute;
     left: 0;
@@ -315,11 +320,18 @@ img {
     transition: color 0.2s ease, transform 0.15s ease;
 }
 
-.stars label:hover::before,
-.stars label:hover ~ label::before,
-.stars input:checked ~ label::before {
+.star-rating button:hover::before,
+.star-rating button:hover ~ button::before,
+.star-rating button.active::before,
+.star-rating button:focus-visible::before {
     color: white;
     transform: scale(1.08);
+}
+
+.star-rating:focus-visible {
+    outline: 2px solid #5c4a72;
+    outline-offset: 6px;
+    border-radius: 4px;
 }
 
 .about-hero {
@@ -468,10 +480,6 @@ footer {
     }
 
     .slideshow {
-        height: 220px;
-    }
-
-    .slides img {
         height: 220px;
     }
 

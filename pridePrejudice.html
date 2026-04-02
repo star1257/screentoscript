@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ScreenToScript - Pride & Prejudice</title>
+    <title>ScreenToScript - Pride &amp; Prejudice</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -53,41 +53,23 @@
     <section class="rating-section">
         <div class="rating-box">
             <h4>Rate movie:</h4>
-            <div class="stars">
-                <input type="radio" id="movie5-p" name="movie-rating-p" value="5">
-                <label for="movie5-p">★</label>
-
-                <input type="radio" id="movie4-p" name="movie-rating-p" value="4">
-                <label for="movie4-p">★</label>
-
-                <input type="radio" id="movie3-p" name="movie-rating-p" value="3">
-                <label for="movie3-p">★</label>
-
-                <input type="radio" id="movie2-p" name="movie-rating-p" value="2">
-                <label for="movie2-p">★</label>
-
-                <input type="radio" id="movie1-p" name="movie-rating-p" value="1">
-                <label for="movie1-p">★</label>
+            <div class="star-rating" role="radiogroup" aria-label="Rate movie">
+                <button type="button" aria-label="1 star"></button>
+                <button type="button" aria-label="2 stars"></button>
+                <button type="button" aria-label="3 stars"></button>
+                <button type="button" aria-label="4 stars"></button>
+                <button type="button" aria-label="5 stars"></button>
             </div>
         </div>
 
         <div class="rating-box">
             <h4>Rate book:</h4>
-            <div class="stars">
-                <input type="radio" id="book5-p" name="book-rating-p" value="5">
-                <label for="book5-p">★</label>
-
-                <input type="radio" id="book4-p" name="book-rating-p" value="4">
-                <label for="book4-p">★</label>
-
-                <input type="radio" id="book3-p" name="book-rating-p" value="3">
-                <label for="book3-p">★</label>
-
-                <input type="radio" id="book2-p" name="book-rating-p" value="2">
-                <label for="book2-p">★</label>
-
-                <input type="radio" id="book1-p" name="book-rating-p" value="1">
-                <label for="book1-p">★</label>
+            <div class="star-rating" role="radiogroup" aria-label="Rate book">
+                <button type="button" aria-label="1 star"></button>
+                <button type="button" aria-label="2 stars"></button>
+                <button type="button" aria-label="3 stars"></button>
+                <button type="button" aria-label="4 stars"></button>
+                <button type="button" aria-label="5 stars"></button>
             </div>
         </div>
     </section>
@@ -97,5 +79,6 @@
     <p>© 2026 ScreenToScript</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
