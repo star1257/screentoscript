@@ -238,8 +238,9 @@ img {
     font-size: 1em;
 }
 
+/* Goodreads-style star rating */
 .stars {
-    display: flex;
+    display: inline-flex;
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
@@ -256,7 +257,27 @@ img {
     cursor: pointer;
     line-height: 1;
     transition: color 0.2s ease, transform 0.15s ease;
-    user-select
+    user-select: none;
+}
+
+.stars label:hover {
+    transform: scale(1.08);
+}
+
+.stars label:hover,
+.stars label:hover ~ label {
+    color: gold;
+}
+
+.stars input:checked ~ label {
+    color: gold;
+}
+
+.stars input:focus-visible + label {
+    outline: 2px solid #5c4a72;
+    outline-offset: 4px;
+    border-radius: 4px;
+}
 
 .about-hero {
     max-width: 1100px;
