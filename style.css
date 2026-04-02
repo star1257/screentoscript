@@ -292,48 +292,38 @@ img {
 
 .star-rating {
     display: inline-flex;
-    flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
-    gap: 2px;
-    outline: none;
+    gap: 6px;
 }
 
 .star-rating button {
-    border: 0;
+    border: none;
     background: transparent;
     cursor: pointer;
-    width: 1em;
-    height: 1em;
-    position: relative;
+    font-size: 2.4rem;
+    line-height: 1;
+    color: #b8b8b8;
+    transition: color 0.2s ease, transform 0.2s ease;
     padding: 0;
 }
 
 .star-rating button::before {
     content: "★";
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 2.8rem;
-    line-height: 1;
-    color: #b8b8b8;
-    transition: color 0.2s ease, transform 0.15s ease;
 }
 
-.star-rating button:hover::before,
-.star-rating button:hover ~ button::before,
-.star-rating button.active::before,
-.star-rating button:focus-visible::before {
+.star-rating button:hover,
+.star-rating button:focus-visible,
+.star-rating button.active {
     color: white;
     transform: scale(1.08);
 }
 
-.star-rating:focus-visible {
+.star-rating button:focus-visible {
     outline: 2px solid #5c4a72;
-    outline-offset: 6px;
+    outline-offset: 4px;
     border-radius: 4px;
-}
-
+} 
 .about-hero {
     max-width: 1100px;
     margin: 0 auto;
