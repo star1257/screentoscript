@@ -238,7 +238,7 @@ img {
     font-size: 1em;
 }
 
-/* Goodreads-style star rating */
+/* Star rating */
 .stars {
     display: inline-flex;
     flex-direction: row-reverse;
