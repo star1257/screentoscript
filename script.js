@@ -1,139 +1,108 @@
-// ---------- SLIDESHOW ----------
+/* ---------- SLIDESHOW ---------- */
 const slides = document.querySelector(".slides");
-const slideImages = document.querySelectorAll(".slide");
-const slideshow = document.querySelector(".slideshow");
-
+const slideItems = document.querySelectorAll(".slide");
 const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
+const slideshow = document.querySelector(".slideshow");
 
-let index = 0;
-let autoplay;
+let currentSlide = 0;
+let autoSlide;
 
-function updateSlide() {
-    if (!slides || slideImages.length === 0) return;
+function showSlide(index) {
+    if (!slides || slideItems.length === 0) return;
     slides.style.transform = `translateX(-${index * 100}%)`;
 }
 
 function nextSlide() {
-    if (slideImages.length === 0) return;
-    index = (index + 1) % slideImages.length;
-    updateSlide();
+    if (slideItems.length === 0) return;
+    currentSlide++;
+    if (currentSlide >= slideItems.length) {
+        currentSlide = 0;
+    }
+    showSlide(currentSlide);
 }
 
 function prevSlide() {
-    if (slideImages.length === 0) return;
-    index = (index - 1 + slideImages.length) % slideImages.length;
-    updateSlide();
+    if (slideItems.length === 0) return;
+    currentSlide--;
+    if (currentSlide < 0) {
+        currentSlide = slideItems.length - 1;
+    }
+    showSlide(currentSlide);
 }
 
-function startAutoplay() {
-    if (slideImages.length <= 1) return;
-    stopAutoplay();
-    autoplay = setInterval(nextSlide, 4000);
+function startAutoSlide() {
+    if (slideItems.length <= 1) return;
+    stopAutoSlide();
+    autoSlide = setInterval(nextSlide, 4000);
 }
 
-function stopAutoplay() {
-    clearInterval(autoplay);
+function stopAutoSlide() {
+    clearInterval(autoSlide);
 }
 
-if (slides && slideImages.length > 0 && prevBtn && nextBtn) {
-    updateSlide();
+if (slides && prevBtn && nextBtn && slideItems.length > 0) {
+    showSlide(currentSlide);
 
     nextBtn.addEventListener("click", () => {
         nextSlide();
-        startAutoplay();
+        startAutoSlide();
     });
 
     prevBtn.addEventListener("click", () => {
         prevSlide();
-        startAutoplay();
+        startAutoSlide();
     });
 
     if (slideshow) {
-        slideshow.addEventListener("mouseenter", stopAutoplay);
-        slideshow.addEventListener("mouseleave", startAutoplay);
+        slideshow.addEventListener("mouseenter", stopAutoSlide);
+        slideshow.addEventListener("mouseleave", startAutoSlide);
     }
 
-    startAutoplay();
+    startAutoSlide();
 }
 
-// ---------- STAR RATING ----------
-document.querySelectorAll(".star-rating").forEach((rating) => {
-    const stars = Array.from(rating.querySelectorAll("button"));
-    let selectedRating = 0;
+/* ---------- STAR RATING ---------- */
+document.querySelectorAll(".star-rating").forEach((ratingGroup) => {
+    const stars = ratingGroup.querySelectorAll("button");
+    let selectedValue = 0;
 
-    stars.forEach((star, i) => {
-        const value = i + 1;
-        star.dataset.value = value;
-        star.setAttribute("role", "radio");
-        star.setAttribute("aria-checked", "false");
-        star.setAttribute("aria-label", `${value} star${value > 1 ? "s" : ""}`);
-        star.setAttribute("tabindex", i === 0 ? "0" : "-1");
-    });
-
-    function paint(value) {
-        stars.forEach((star, i) => {
-            const active = i < value;
-            star.classList.toggle("active", active);
-            star.setAttribute("aria-checked", active && i === value - 1 ? "true" : "false");
+    function updateStars(value, className) {
+        stars.forEach((star, index) => {
+            if (index < value) {
+                star.classList.add(className);
+            } else {
+                star.classList.remove(className);
+            }
         });
     }
 
-    function setRating(value) {
-        selectedRating = value;
-        paint(selectedRating);
-
-        stars.forEach((star, i) => {
-            star.setAttribute("tabindex", i === value - 1 ? "0" : "-1");
+    function clearHover() {
+        stars.forEach((star) => {
+            star.classList.remove("hovered");
         });
     }
 
-    stars.forEach((star, i) => {
-        const value = i + 1;
+    stars.forEach((star, index) => {
+        const value = index + 1;
 
         star.addEventListener("mouseenter", () => {
-            paint(value);
-        });
-
-        star.addEventListener("focus", () => {
-            paint(value);
+            clearHover();
+            updateStars(value, "hovered");
         });
 
         star.addEventListener("click", () => {
-            setRating(value);
+            selectedValue = value;
+            stars.forEach((s) => s.classList.remove("active"));
+            updateStars(selectedValue, "active");
         });
 
-        star.addEventListener("keydown", (e) => {
-            let newValue = selectedRating || value;
-
-            if (e.key === "ArrowRight" || e.key === "ArrowUp") {
-                e.preventDefault();
-                newValue = Math.min(5, value + 1);
-                stars[newValue - 1].focus();
-            }
-
-            if (e.key === "ArrowLeft" || e.key === "ArrowDown") {
-                e.preventDefault();
-                newValue = Math.max(1, value - 1);
-                stars[newValue - 1].focus();
-            }
-
-            if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                setRating(value);
-            }
+        star.addEventListener("mouseleave", () => {
+            clearHover();
         });
     });
 
-    rating.addEventListener("mouseleave", () => {
-        paint(selectedRating);
+    ratingGroup.addEventListener("mouseleave", () => {
+        clearHover();
     });
-
-    rating.addEventListener("focusout", (e) => {
-        if (!rating.contains(e.relatedTarget)) {
-            paint(selectedRating);
-        }
-    });
-
-    paint(0);
 });
