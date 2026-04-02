@@ -1,39 +1,28 @@
-// Slideshow logic
-const slides = document.querySelector('.slides');
-const images = document.querySelectorAll('.slides img');
-const next = document.getElementById('next');
-const prev = document.getElementById('prev');
+const slides = document.querySelector(".slides");
+const slideImages = document.querySelectorAll(".slides img");
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
+
 let index = 0;
 
-function showSlide(i) {
-  if (i >= images.length) index = 0;
-  else if (i < 0) index = images.length - 1;
-  slides.style.transform = `translateX(-${index * 900}px)`;
+function updateSlide() {
+    if (!slides) return;
+    slides.style.transform = `translateX(-${index * 100}%)`;
 }
 
-next?.addEventListener('click', () => {
-  index++;
-  showSlide(index);
-});
-prev?.addEventListener('click', () => {
-  index--;
-  showSlide(index);
-});
-setInterval(() => {
-  index++;
-  showSlide(index);
-}, 4000);
-
-// Star rating logic
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.stars').forEach(starSet => {
-    const stars = starSet.querySelectorAll('i');
-    stars.forEach((star, i) => {
-      star.addEventListener('click', () => {
-        stars.forEach((s, j) => {
-          s.classList.toggle('active', j <= i);
-        });
-      });
+if (nextBtn && prevBtn && slides && slideImages.length > 0) {
+    nextBtn.addEventListener("click", () => {
+        index = (index + 1) % slideImages.length;
+        updateSlide();
     });
-  });
-});
+
+    prevBtn.addEventListener("click", () => {
+        index = (index - 1 + slideImages.length) % slideImages.length;
+        updateSlide();
+    });
+
+    setInterval(() => {
+        index = (index + 1) % slideImages.length;
+        updateSlide();
+    }, 4000);
+}
