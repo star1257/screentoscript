@@ -226,6 +226,7 @@ img {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 20px 30px 30px;
+    gap: 20px;
 }
 
 .rating-box {
@@ -237,10 +238,34 @@ img {
     font-size: 1em;
 }
 
+/* Clickable star rating */
 .stars {
-    font-size: 3em;
+    direction: rtl;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.stars input {
+    display: none;
+}
+
+.stars label {
+    font-size: 2.5em;
     color: #b8b8b8;
-    letter-spacing: 6px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    padding: 0 2px;
+}
+
+.stars label:hover,
+.stars label:hover ~ label {
+    color: gold;
+}
+
+.stars input:checked ~ label {
+    color: gold;
 }
 
 .about-hero {
