@@ -15,19 +15,13 @@ function showSlide(index) {
 
 function nextSlide() {
     if (slideItems.length === 0) return;
-    currentSlide++;
-    if (currentSlide >= slideItems.length) {
-        currentSlide = 0;
-    }
+    currentSlide = (currentSlide + 1) % slideItems.length;
     showSlide(currentSlide);
 }
 
 function prevSlide() {
     if (slideItems.length === 0) return;
-    currentSlide--;
-    if (currentSlide < 0) {
-        currentSlide = slideItems.length - 1;
-    }
+    currentSlide = (currentSlide - 1 + slideItems.length) % slideItems.length;
     showSlide(currentSlide);
 }
 
@@ -64,22 +58,26 @@ if (slides && prevBtn && nextBtn && slideItems.length > 0) {
 
 /* ---------- STAR RATING ---------- */
 document.querySelectorAll(".star-rating").forEach((ratingGroup) => {
-    const stars = ratingGroup.querySelectorAll("button");
+    const stars = Array.from(ratingGroup.querySelectorAll("button"));
     let selectedValue = 0;
 
-    function updateStars(value, className) {
+    function paint(value, className) {
         stars.forEach((star, index) => {
-            if (index < value) {
-                star.classList.add(className);
-            } else {
-                star.classList.remove(className);
-            }
+            star.classList.toggle(className, index < value);
         });
     }
 
     function clearHover() {
-        stars.forEach((star) => {
-            star.classList.remove("hovered");
+        stars.forEach((star) => star.classList.remove("hovered"));
+        paint(selectedValue, "active");
+    }
+
+    function updateAria() {
+        stars.forEach((star, index) => {
+            const value = index + 1;
+            star.setAttribute("aria-label", `${value} star${value > 1 ? "s" : ""}`);
+            star.setAttribute("aria-pressed", value === selectedValue ? "true" : "false");
+            star.setAttribute("tabindex", selectedValue === 0 ? (index === 0 ? "0" : "-1") : (value === selectedValue ? "0" : "-1"));
         });
     }
 
@@ -87,22 +85,42 @@ document.querySelectorAll(".star-rating").forEach((ratingGroup) => {
         const value = index + 1;
 
         star.addEventListener("mouseenter", () => {
-            clearHover();
-            updateStars(value, "hovered");
+            paint(value, "hovered");
         });
 
         star.addEventListener("click", () => {
             selectedValue = value;
-            stars.forEach((s) => s.classList.remove("active"));
-            updateStars(selectedValue, "active");
+            paint(selectedValue, "active");
+            updateAria();
         });
 
         star.addEventListener("mouseleave", () => {
             clearHover();
         });
+
+        star.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                selectedValue = value;
+                paint(selectedValue, "active");
+                updateAria();
+            }
+
+            if (e.key === "ArrowRight" || e.key === "ArrowUp") {
+                e.preventDefault();
+                const next = Math.min(index + 1, stars.length - 1);
+                stars[next].focus();
+            }
+
+            if (e.key === "ArrowLeft" || e.key === "ArrowDown") {
+                e.preventDefault();
+                const prev = Math.max(index - 1, 0);
+                stars[prev].focus();
+            }
+        });
     });
 
-    ratingGroup.addEventListener("mouseleave", () => {
-        clearHover();
-    });
+    ratingGroup.addEventListener("mouseleave", clearHover);
+    clearHover();
+    updateAria();
 });
