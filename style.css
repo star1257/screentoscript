@@ -442,11 +442,14 @@ footer {
         text-align: center;
     }
 
-    .media-item img {
-        width: 160px;
-        height: 220px;
-        min-width: 160px;
-    }
+  .media-item img {
+    width: 220px;   /* Keep width consistent */
+    height: 320px;  /* Force a consistent height */
+    min-width: 220px;
+    object-fit: cover; /* This crops the image to fill the 220x320 box */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: makes them pop */
+}
 
     .comparison-grid {
         grid-template-columns: 1fr;
