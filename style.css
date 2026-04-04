@@ -228,11 +228,33 @@ a {
     transition: 0.25s ease;
     border: none;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
 .button:hover {
     background: var(--lavender-dark);
     transform: translateY(-1px);
+}
+
+/* Ripple effect */
+.button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+}
+
+.button:active::after {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
 }
 
 /* ===== MEDIA LIST PAGES (BOOKS & FILMS) ===== */
@@ -252,6 +274,11 @@ a {
     grid-template-columns: 260px 1fr;
     align-items: stretch;
     overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.media-item:hover {
+    box-shadow: 0 15px 35px rgba(86, 68, 116, 0.15);
 }
 
 .media-text {
@@ -551,6 +578,36 @@ footer {
     font-weight: 700;
 }
 
+<<<<<<< HEAD
+=======
+/* ===== BACK TO TOP BUTTON ===== */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--lavender-dark);
+    color: var(--text);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+#backToTop:hover {
+    background: var(--lavender);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+>>>>>>> 0074dbb (removing slideshow)
 /* ===== RESPONSIVE ===== */
 @media (max-width: 980px) {
     .comparison-container {
