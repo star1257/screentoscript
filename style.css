@@ -45,7 +45,7 @@ a {
     flex-direction: column;
 }
 
-/* NAVBAR */
+/* ===== NAVBAR (GRID, NO WRAP) ===== */
 .navbar {
     background: var(--lavender);
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
@@ -108,7 +108,7 @@ a {
     width: 100%;
 }
 
-/* LAYOUT */
+/* ===== LAYOUT ===== */
 .container {
     max-width: var(--max-width);
     margin: 0 auto;
@@ -138,7 +138,7 @@ a {
     margin: 0 auto;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero {
     text-align: center;
     padding-top: 10px;
@@ -156,7 +156,7 @@ a {
     margin: 0 auto 26px;
 }
 
-/* SLIDESHOW */
+/* ===== SLIDESHOW ===== */
 .slideshow-container {
     position: relative;
     max-width: 100%;
@@ -168,6 +168,7 @@ a {
 
 .mySlides {
     display: none;
+    position: relative;
 }
 
 .mySlides img {
@@ -228,7 +229,7 @@ a {
     to {opacity: 1}
 }
 
-/* FEATURED COMPARISONS */
+/* ===== FEATURED COMPARISONS ===== */
 .comparison-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -255,7 +256,7 @@ a {
     transform: translateY(-4px);
 }
 
-/* UNIFIED IMAGE SIZING */
+/* UNIFIED IMAGE SIZING (force all comparison/media images to 340px) */
 .comparison-item img,
 .media-item img,
 .comparison-box.image-box img,
@@ -280,7 +281,7 @@ a {
     margin-bottom: 16px;
 }
 
-/* BUTTONS */
+/* ===== BUTTONS ===== */
 .button {
     display: inline-block;
     padding: 12px 18px;
@@ -299,7 +300,7 @@ a {
     transform: translateY(-1px);
 }
 
-/* MEDIA LIST PAGES */
+/* ===== MEDIA LIST PAGES (BOOKS & FILMS) ===== */
 .page-header {
     text-align: center;
     margin-bottom: 32px;
@@ -336,7 +337,7 @@ a {
     max-width: 560px;
 }
 
-/* COMPARISON PAGE */
+/* ===== COMPARISON PAGES ===== */
 .comparison-page {
     max-width: var(--max-width);
     margin: 0 auto;
@@ -406,6 +407,7 @@ a {
     font-size: 1rem;
 }
 
+/* ===== RATING SECTION ===== */
 .rating-section {
     background: var(--lavender);
     display: grid;
@@ -429,7 +431,7 @@ a {
     font-size: 1rem;
 }
 
-/* STAR RATING */
+/* GOODREADS STYLE STAR RATING */
 .stars {
     display: inline-flex;
     flex-direction: row-reverse;
@@ -466,6 +468,12 @@ a {
     color: var(--star-filled);
 }
 
+.stars input:focus-visible + label {
+    outline: 2px solid #5c4a72;
+    outline-offset: 4px;
+    border-radius: 6px;
+}
+
 .rating-value {
     margin-top: 14px;
     font-weight: 700;
@@ -473,7 +481,7 @@ a {
     min-height: 24px;
 }
 
-/* ABOUT PAGE */
+/* ===== ABOUT PAGE ===== */
 .about-hero {
     max-width: var(--max-width);
     margin: 0 auto;
@@ -598,7 +606,7 @@ a {
     color: #4b4452;
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer {
     margin-top: auto;
     text-align: center;
@@ -608,7 +616,7 @@ footer {
     font-weight: 700;
 }
 
-/* RESPONSIVE */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 980px) {
     .comparison-container {
         grid-template-columns: 1fr;
