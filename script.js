@@ -32,7 +32,21 @@ document.addEventListener("DOMContentLoaded", () => {
             4: "4 stars",
             5: "5 stars"
         };
-
         output.textContent = `Your rating: ${labels[value]}`;
+    }
+
+    // Newsletter signup handling
+    const newsletterForm = document.querySelector('.updates-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const emailInput = newsletterForm.querySelector('input[type="email"]');
+            if (emailInput && emailInput.value.trim() !== '') {
+                alert(`Thanks for subscribing with ${emailInput.value}! You'll receive our weekly updates.`);
+                emailInput.value = '';
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        });
     }
 });
