@@ -32,7 +32,9 @@ function startAutoSlide() {
 }
 
 function stopAutoSlide() {
-    clearInterval(autoSlide);
+    if (autoSlide) {
+        clearInterval(autoSlide);
+    }
 }
 
 if (slides && prevBtn && nextBtn && slideItems.length > 0) {
@@ -53,12 +55,26 @@ if (slides && prevBtn && nextBtn && slideItems.length > 0) {
         slideshow.addEventListener("mouseleave", startAutoSlide);
     }
 
+    window.addEventListener("resize", () => {
+        showSlide(currentSlide);
+    });
+
     startAutoSlide();
 }
 
-/* ---------- STAR RATING ---------- */
+
+/* ---------- GOODREADS-STYLE STAR RATING ---------- */
+const ratingTexts = {
+    1: "did not like it",
+    2: "it was ok",
+    3: "liked it",
+    4: "really liked it",
+    5: "it was amazing"
+};
+
 document.querySelectorAll(".star-rating").forEach((ratingGroup) => {
-    const stars = Array.from(ratingGroup.querySelectorAll("button"));
+    const stars = Array.from(ratingGroup.querySelectorAll(".star-buttons button"));
+    const label = ratingGroup.querySelector(".rating-label");
     let selectedValue = 0;
 
     function paint(value, className) {
@@ -67,9 +83,27 @@ document.querySelectorAll(".star-rating").forEach((ratingGroup) => {
         });
     }
 
-    function clearHover() {
-        stars.forEach((star) => star.classList.remove("hovered"));
-        paint(selectedValue, "active");
+    function clearClass(className) {
+        stars.forEach((star) => {
+            star.classList.remove(className);
+        });
+    }
+
+    function updateDisplay(value, isHover = false) {
+        clearClass("hovered");
+        clearClass("active");
+
+        if (isHover) {
+            paint(value, "hovered");
+            if (label) {
+                label.textContent = ratingTexts[value];
+            }
+        } else {
+            paint(selectedValue, "active");
+            if (label) {
+                label.textContent = selectedValue ? ratingTexts[selectedValue] : "Rate this";
+            }
+        }
     }
 
     function updateAria() {
@@ -77,7 +111,7 @@ document.querySelectorAll(".star-rating").forEach((ratingGroup) => {
             const value = index + 1;
             star.setAttribute("aria-label", `${value} star${value > 1 ? "s" : ""}`);
             star.setAttribute("aria-pressed", value === selectedValue ? "true" : "false");
-            star.setAttribute("tabindex", selectedValue === 0 ? (index === 0 ? "0" : "-1") : (value === selectedValue ? "0" : "-1"));
+            star.setAttribute("tabindex", value === (selectedValue || 1) ? "0" : "-1");
         });
     }
 
@@ -85,24 +119,20 @@ document.querySelectorAll(".star-rating").forEach((ratingGroup) => {
         const value = index + 1;
 
         star.addEventListener("mouseenter", () => {
-            paint(value, "hovered");
+            updateDisplay(value, true);
         });
 
         star.addEventListener("click", () => {
             selectedValue = value;
-            paint(selectedValue, "active");
+            updateDisplay(selectedValue, false);
             updateAria();
-        });
-
-        star.addEventListener("mouseleave", () => {
-            clearHover();
         });
 
         star.addEventListener("keydown", (e) => {
             if (e.key === "Enter" || e.key === " ") {
                 e.preventDefault();
                 selectedValue = value;
-                paint(selectedValue, "active");
+                updateDisplay(selectedValue, false);
                 updateAria();
             }
 
@@ -120,7 +150,10 @@ document.querySelectorAll(".star-rating").forEach((ratingGroup) => {
         });
     });
 
-    ratingGroup.addEventListener("mouseleave", clearHover);
-    clearHover();
+    ratingGroup.addEventListener("mouseleave", () => {
+        updateDisplay(selectedValue, false);
+    });
+
+    updateDisplay(0, false);
     updateAria();
 });
