@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ScreenToScript - Home</title>
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
 <div class="site-wrapper">
@@ -29,20 +29,25 @@
                 and rate your favourites.
             </p>
 
-            <!-- SLIDESHOW -->
-          <div class="slideshow-container" id="slideshow-container">
-    <div class="mySlides">
-        <img src="firstImage.jpg" alt="Slide 1">
-    </div>
-    <div class="mySlides">
-        <img src="flowers.jpg" alt="Slide 2">
-    </div>
-    <div class="mySlides">
-        <img src="bookStack.jpg" alt="Slide 3">
-    </div>
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
+            <!-- SIMPLE SLIDESHOW WITH ONLINE IMAGES -->
+            <div class="slideshow-container">
+                <div class="mySlides">
+                    <img src="https://picsum.photos/id/104/1200/460" alt="Slide 1" style="width:100%; height:460px; object-fit:cover;">
+                </div>
+                <div class="mySlides">
+                    <img src="https://picsum.photos/id/106/1200/460" alt="Slide 2" style="width:100%; height:460px; object-fit:cover;">
+                </div>
+                <div class="mySlides">
+                    <img src="https://picsum.photos/id/107/1200/460" alt="Slide 3" style="width:100%; height:460px; object-fit:cover;">
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <div style="text-align:center; margin-top:12px;">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
         </section>
 
         <section class="section-spacing">
@@ -50,28 +55,25 @@
                 <h2>Featured Comparisons</h2>
                 <p>Discover some of the most loved stories that made the journey from page to screen.</p>
             </div>
-
             <div class="comparison-container">
                 <article class="comparison-item">
-                    <img src="book1.jpg" alt="Romeo and Juliet" style="width:100%; height:340px; object-fit:cover;" onerror="this.src='https://placehold.co/400x340?text=Book+1'">
+                    <img src="https://picsum.photos/id/100/400/340" alt="Romeo and Juliet" style="width:100%; height:340px; object-fit:cover;">
                     <div class="comparison-item-content">
                         <h3>Romeo and Juliet</h3>
                         <p>Shakespeare’s tragedy reimagined for the screen.</p>
                         <a href="romeoJuliet.html" class="button">View Comparison</a>
                     </div>
                 </article>
-
                 <article class="comparison-item">
-                    <img src="book2.jpg" alt="Pride and Prejudice" style="width:100%; height:340px; object-fit:cover;" onerror="this.src='https://placehold.co/400x340?text=Book+2'">
+                    <img src="https://picsum.photos/id/101/400/340" alt="Pride and Prejudice" style="width:100%; height:340px; object-fit:cover;">
                     <div class="comparison-item-content">
                         <h3>Pride and Prejudice</h3>
                         <p>Jane Austen’s romance brought to life in cinema.</p>
                         <a href="pridePrejudice.html" class="button">View Comparison</a>
                     </div>
                 </article>
-
                 <article class="comparison-item">
-                    <img src="book3.jpg" alt="The Great Gatsby" style="width:100%; height:340px; object-fit:cover;" onerror="this.src='https://placehold.co/400x340?text=Book+3'">
+                    <img src="https://picsum.photos/id/102/400/340" alt="The Great Gatsby" style="width:100%; height:340px; object-fit:cover;">
                     <div class="comparison-item-content">
                         <h3>The Great Gatsby</h3>
                         <p>A dazzling adaptation of Fitzgerald’s iconic novel.</p>
@@ -85,7 +87,6 @@
     <footer>
         <p>© 2026 ScreenToScript</p>
     </footer>
-
 </div>
 <script src="script.js"></script>
 </body>
