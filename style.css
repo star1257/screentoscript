@@ -1,523 +1,122 @@
+/* Global Reset & Colors */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary-purple: #d8cdea;
+    --dark-purple: #5c4a72;
+    --light-bg: #f5f0fa;
+    --text-color: #333;
 }
 
 body {
     background-color: #fff;
-    color: #333;
+    color: var(--text-color);
     line-height: 1.6;
 }
 
-img {
-    display: block;
-    max-width: 100%; /* Ensure images are responsive */
-    height: auto; /* Maintain aspect ratio */
-}
-
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background-color: #d8cdea;
-    flex-wrap: wrap;
+    padding: 15px 5%;
+    background-color: var(--primary-purple);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.navbar h1 {
-    font-size: 1.8rem;
-}
+.navbar h1 { font-size: 1.5rem; letter-spacing: 1px; }
 
-.navbar nav {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.navbar a {
+.navbar nav a {
     margin-left: 20px;
     text-decoration: none;
     color: #333;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
 }
 
-.navbar a:hover {
-    color: #5c4a72;
-}
-
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 20px;
-}
-
-.hero {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.hero h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-/* ---------- SLIDESHOW ---------- */
-.slideshow {
-    position: relative;
-    width: 100%;
-    max-width: 900px;
-    height: 350px;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 12px;
-}
-
-.slides {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s ease-in-out;
-    will-change: transform;
-}
-
-.slide {
-    flex: 0 0 100%;
-    width: 100%;
-    height: 100%;
-}
-
-.slide img {
-    width: 100%; /* Maintain full width */
-    height: auto; /* Ensure aspect ratio is kept */
-    max-height: 350px; /* Set a max height */
-    object-fit: cover; /* Cover the area */
-}
-
-.slide-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.35);
-    color: white;
-    border: none;
-    padding: 10px 14px;
-    cursor: pointer;
-    font-size: 1.4rem;
-    border-radius: 50%;
-    z-index: 2;
-}
-
-.slide-btn:hover {
-    background-color: rgba(0, 0, 0, 0.55);
-}
-
-.slide-btn.prev {
-    left: 12px;
-}
-
-.slide-btn.next {
-    right: 12px;
-}
-
-.featured-comparisons h3 {
-    text-align: center;
-    margin-bottom: 25px;
-    font-size: 1.6rem;
-}
-
-.comparison-container {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.comparison-item {
-    width: 220px;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.comparison-item:hover {
-    transform: scale(1.05);
-}
-
-.comparison-item img {
-    width: 220px;
-    height: 300px; /* Set uniform height */
-    object-fit: cover;
-    border-radius: 8px;
-    margin: 0 auto 10px;
-}
-
-.comparison-item p {
-    font-weight: bold;
-}
-
-.page-title {
-    font-size: 2em;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.media-list {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.media-item {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    background-color: #f5f0fa;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.media-item img {
-    width: 220px;
-    height: 300px; /* Set uniform size */
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.media-text {
-    flex: 1;
-}
-
-.media-text h3 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-}
-
-.media-text p {
-    margin-bottom: 15px;
-}
-
-.button {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #d8cdea;
-    color: #333;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: 0.3s ease;
-}
-
-.button:hover {
-    background-color: #c6b3e0;
-}
-
-.comparison-page {
-    max-width: 1100px;
-    margin: 0 auto;
-    background-color: #fff;
-}
-
-.comparison-title {
-    text-align: center;
-    padding: 50px 20px 40px;
-}
-
-.comparison-title h2 {
-    font-size: 2em;
-    line-height: 1.3;
-}
-
+/* Comparison Grid (The Core of your Diagram) */
 .comparison-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    width: 100%;
+    border-top: 1px solid #eee;
 }
 
 .comparison-box {
-    min-height: 320px;
-    border: 1px solid #ddd;
+    height: 400px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 30px;
-}
-
-.image-box {
-    padding: 0;
+    padding: 40px;
+    text-align: center;
 }
 
 .image-box img {
     width: 100%;
-    height: 320px;
+    height: 100%;
     object-fit: cover;
 }
 
 .text-box {
-    flex-direction: column;
-    text-align: center;
+    background-color: #fff;
 }
 
 .text-box h3 {
-    font-size: 1.4em;
-    margin-bottom: 20px;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--dark-purple);
 }
 
-.text-box p {
-    max-width: 350px;
-    line-height: 1.7;
-    color: #444;
-    font-size: 0.95em;
+/* Staggering the grid to match the image */
+/* This makes the second row reverse so it looks like a checkerboard */
+.row-reverse {
+    direction: rtl; 
 }
+.row-reverse .text-box { direction: ltr; }
 
+/* Rating Section */
 .rating-section {
-    background-color: #d8cdea;
+    background-color: var(--primary-purple);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 20px 30px 30px;
-    gap: 20px;
-}
-
-.rating-box {
+    padding: 40px;
     text-align: center;
-}
-
-.rating-box h4 {
-    margin-bottom: 12px;
-    font-size: 1em;
-}
-
-/* ---------- STAR RATING ---------- */
-.star-rating {
-    display: inline-flex;
-    gap: 8px;
-    justify-content: center;
-    align-items: center;
 }
 
 .star-rating button {
+    font-size: 2.5rem;
+    background: none;
     border: none;
-    background: transparent;
+    color: #fff;
     cursor: pointer;
-    font-size: 2.8rem;
-    line-height: 1;
-    color: #9f9f9f;
-    transition: color 0.25s ease, transform 0.2s ease, text-shadow 0.25s ease;
-    padding: 0;
+    transition: 0.2s;
 }
 
-.star-rating button::before {
-    content: "★";
+.star-rating button.active, .star-rating button.hovered {
+    color: var(--dark-purple);
 }
 
-.star-rating button.hovered,
-.star-rating button.active {
-    color: #ffffff;
-    transform: scale(1.08);
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.9),
-                 0 0 16px rgba(255, 255, 255, 0.7);
-}
-
-.star-rating button:focus-visible {
-    outline: 2px solid #5c4a72;
-    outline-offset: 4px;
-    border-radius: 4px;
-}
-
-.about-hero {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    background-color: #f5f0fa; /* Light background */
-    border-radius: 10px; /* Rounded edges */
-}
-
-.about-hero h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 2rem;
-}
-
-.about-content {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.about-text {
-    flex: 1;
-    padding: 20px; /* Inner padding for text */
-}
-
-.about-text h3 {
-    margin-bottom: 15px;
-    font-size: 1.6rem;
-}
-
-.about-text p {
-    margin-bottom: 15px;
-}
-
-.about-image img {
-    width: 350px;
-    height: 250px; /* Set uniform size */
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-.updates-section {
-    padding: 40px 20px;
-}
-
-.updates-wrapper {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    gap: 30px;
-    align-items: stretch;
-    flex-wrap: wrap;
-}
-
-.updates-card {
-    flex: 1;
-    background-color: #f5f0fa;
-    padding: 30px;
-    border-radius: 10px;
-}
-
-.updates-card h3 {
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-}
-
-.updates-card p {
-    margin-bottom: 15px;
-}
-
-.updates-form {
-    display: flex;
-    gap: 10px;
-    margin: 20px 0;
-    flex-wrap: wrap;
-}
-
-.updates-form input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    min-width: 220px;
-}
-
-.updates-form button {
-    padding: 10px 15px;
-    border: none;
-    background-color: #d8cdea;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.updates-form button:hover {
-    background-color: #c6b3e0;
-}
-
-.updates-image img {
-    width: 350px;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.about-footer-info {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.info-box {
-    background-color: #f5f0fa;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.info-box h4 {
-    margin-bottom: 10px;
-}
-
+/* Footer */
 footer {
-    text-align: center;
     padding: 20px;
-    background-color: #d8cdea;
-    margin-top: 60px;
+    text-align: center;
+    background: var(--primary-purple);
+    font-size: 0.8rem;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
-
-    .navbar a {
-        margin: 0 10px;
-    }
-
-    .hero h2 {
-        font-size: 1.6rem;
-    }
-
-    .slideshow {
-        height: 220px;
-    }
-
-    .comparison-item {
-        width: 160px;
-    }
-
-    .comparison-item img {
-        width: 160px;
-        height: 220px;
-    }
-
-    .media-item {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .media-item img {
-        width: 160px;
-        height: 220px;
-        min-width: 160px;
-    }
-
-    .comparison-grid {
+    .comparison-grid, .rating-section {
         grid-template-columns: 1fr;
     }
-
-    .image-box img {
-        height: 220px;
-    }
-
-    .rating-section {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .about-footer-info {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .about-image img,
-    .updates-image img {
-        width: 100%;
-        height: 220px;
-    }
+    .row-reverse { direction: ltr; }
 }
