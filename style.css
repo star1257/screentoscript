@@ -45,7 +45,7 @@ a {
     flex-direction: column;
 }
 
-/* NAVBAR - FIXED: always horizontal on desktop */
+/* NAVBAR - using CSS Grid to prevent wrapping */
 .navbar {
     background: var(--lavender);
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
@@ -58,12 +58,10 @@ a {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 18px 20px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr;
     align-items: center;
     gap: 20px;
-    /* Remove flex-wrap to prevent stacking on desktop */
-    flex-wrap: nowrap;
 }
 
 .brand {
@@ -78,7 +76,6 @@ a {
     display: flex;
     align-items: center;
     gap: 20px;
-    flex-wrap: wrap;
     justify-content: flex-end;
 }
 
@@ -194,7 +191,7 @@ a {
     transform: translateY(-4px);
 }
 
-/* UNIFIED IMAGE SIZING - FORCED with !important to override any server issues */
+/* UNIFIED IMAGE SIZING - with !important to override any server issues */
 .comparison-item img,
 .media-item img,
 .comparison-box.image-box img,
@@ -580,17 +577,16 @@ footer {
 }
 
 @media (max-width: 768px) {
-    /* Navbar stacks only on very small screens */
     .navbar-inner {
-        flex-wrap: wrap;
-        justify-content: center;
+        grid-template-columns: 1fr;
         text-align: center;
+        gap: 12px;
     }
-
+    
     .brand {
         white-space: normal;
     }
-
+    
     .nav-links {
         justify-content: center;
     }
@@ -615,7 +611,6 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    /* Smaller image heights on tablets */
     .comparison-item img,
     .media-item img,
     .comparison-box.image-box img,
