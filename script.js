@@ -1,4 +1,5 @@
-/* ---------- SLIDESHOW ---------- */
+// SLIDESHOW FUNCTIONALITY
+
 const slides = document.querySelector(".slides");
 const slideItems = document.querySelectorAll(".slide");
 const prevBtn = document.getElementById("prev");
@@ -56,7 +57,8 @@ if (slides && prevBtn && nextBtn && slideItems.length > 0) {
     startAutoSlide();
 }
 
-/* ---------- STAR RATING ---------- */
+// STAR RATING FUNCTIONALITY
+
 document.querySelectorAll(".star-rating").forEach((ratingGroup) => {
     const stars = Array.from(ratingGroup.querySelectorAll("button"));
     let selectedValue = 0;
