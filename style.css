@@ -45,7 +45,7 @@ a {
     flex-direction: column;
 }
 
-/* NAVBAR - using CSS Grid to prevent wrapping */
+/* NAVBAR */
 .navbar {
     background: var(--lavender);
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
@@ -156,7 +156,7 @@ a {
     margin: 0 auto 26px;
 }
 
-/* SLIDESHOW STYLES */
+/* SLIDESHOW */
 .slideshow-container {
     position: relative;
     max-width: 100%;
@@ -174,6 +174,7 @@ a {
     width: 100%;
     height: 460px;
     object-fit: cover;
+    display: block;
 }
 
 .prev, .next {
@@ -428,7 +429,7 @@ a {
     font-size: 1rem;
 }
 
-/* GOODREADS STYLE STAR RATING */
+/* STAR RATING */
 .stars {
     display: inline-flex;
     flex-direction: row-reverse;
@@ -463,12 +464,6 @@ a {
 
 .stars input:checked ~ label {
     color: var(--star-filled);
-}
-
-.stars input:focus-visible + label {
-    outline: 2px solid #5c4a72;
-    outline-offset: 4px;
-    border-radius: 6px;
 }
 
 .rating-value {
@@ -618,16 +613,13 @@ footer {
     .comparison-container {
         grid-template-columns: 1fr;
     }
-
     .about-content,
     .updates-wrapper {
         grid-template-columns: 1fr;
     }
-
     .about-footer-info {
         grid-template-columns: repeat(2, 1fr);
     }
-
     .media-item {
         grid-template-columns: 1fr;
     }
@@ -639,35 +631,28 @@ footer {
         text-align: center;
         gap: 12px;
     }
-    
     .brand {
         white-space: normal;
     }
-    
     .nav-links {
         justify-content: center;
     }
-
     .hero h2,
     .comparison-title h2,
     .page-title,
     .about-hero h2 {
         font-size: 2rem;
     }
-
     .comparison-grid {
         grid-template-columns: 1fr;
     }
-
     .comparison-box,
     .image-box img {
         min-height: 260px;
     }
-
     .rating-section {
         grid-template-columns: 1fr;
     }
-
     .comparison-item img,
     .media-item img,
     .comparison-box.image-box img,
@@ -675,11 +660,9 @@ footer {
     .updates-image img {
         height: 280px !important;
     }
-    
     .mySlides img {
         height: 320px;
     }
-    
     .prev, .next {
         font-size: 18px;
         padding: 10px;
@@ -694,7 +677,6 @@ footer {
         padding-left: 14px;
         padding-right: 14px;
     }
-
     .comparison-item img,
     .media-item img,
     .comparison-box.image-box img,
@@ -702,16 +684,13 @@ footer {
     .updates-image img {
         height: 220px !important;
     }
-    
     .mySlides img {
         height: 240px;
     }
-
     .text-box h3,
     .media-text h3 {
         font-size: 1.35rem;
     }
-
     .stars label {
         font-size: 2rem;
     }

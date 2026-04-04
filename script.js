@@ -2,24 +2,21 @@ document.addEventListener("DOMContentLoaded", () => {
     // ========== SLIDESHOW ==========
     let slideIndex = 1;
     let slideInterval;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
 
     function showSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
         if (slides.length === 0) return;
-        
         if (n > slides.length) slideIndex = 1;
         if (n < 1) slideIndex = slides.length;
-        
-        for (i = 0; i < slides.length; i++) {
+        for (let i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
         }
-        for (i = 0; i < dots.length; i++) {
+        for (let i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(" active", "");
         }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
+        slides[slideIndex - 1].style.display = "block";
+        if (dots[slideIndex - 1]) dots[slideIndex - 1].className += " active";
     }
 
     function plusSlides(n) {
@@ -43,8 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 4000);
     }
 
-    // Initialize slideshow if exists
-    if (document.getElementsByClassName("mySlides").length > 0) {
+    if (slides.length > 0) {
         showSlides(slideIndex);
         startAutoSlide();
         window.plusSlides = plusSlides;
@@ -53,16 +49,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ========== RATING SYSTEM ==========
     const ratingGroups = document.querySelectorAll(".rating-group");
-
     ratingGroups.forEach((group) => {
         const inputs = group.querySelectorAll('input[type="radio"]');
         const ratingBox = group.closest('.rating-box');
         const output = ratingBox ? ratingBox.querySelector(".rating-value") : null;
         const storageKey = group.dataset.ratingKey;
-
         if (!output) return;
 
-        // Load saved rating
         const savedRating = localStorage.getItem(storageKey);
         if (savedRating) {
             const savedInput = group.querySelector(`input[value="${savedRating}"]`);
@@ -72,7 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        // Add event listeners
         inputs.forEach((input) => {
             input.addEventListener("change", (e) => {
                 const value = e.target.value;
@@ -93,14 +85,14 @@ document.addEventListener("DOMContentLoaded", () => {
         output.textContent = labels[value];
     }
 
-    // ========== NEWSLETTER SIGNUP ==========
+    // ========== NEWSLETTER ==========
     const newsletterForm = document.querySelector('.updates-form');
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const emailInput = newsletterForm.querySelector('input[type="email"]');
             if (emailInput && emailInput.value.trim() !== '') {
-                alert(`Thanks for subscribing with ${emailInput.value}! You'll receive our weekly updates.`);
+                alert(`Thanks for subscribing with ${emailInput.value}!`);
                 emailInput.value = '';
             } else {
                 alert('Please enter a valid email address.');
