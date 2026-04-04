@@ -7,45 +7,71 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="site-wrapper">
 
-<header class="navbar">
-    <h1>ScreenToScript</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="books.html">Books</a>
-        <a href="filmAdaptation.html">Films</a>
-        <a href="about.html">About</a>
-    </nav>
-</header>
-
-<main class="container">
-    <section class="hero">
-        <h2>Bringing books and films together</h2>
-        <img src="firstImage.jpg" alt="Old Stone Building" class="featured-image">
-    </section>
-
-    <section class="featured-comparisons">
-        <h3>Featured Comparisons</h3>
-        <div class="comparison-container">
-            <div class="comparison-item">
-                <img src="book1.jpg" alt="Romeo and Juliet">
-                <p>Romeo and Juliet</p>
-            </div>
-            <div class="comparison-item">
-                <img src="book2.jpg" alt="Pride and Prejudice">
-                <p>Pride and Prejudice</p>
-            </div>
-            <div class="comparison-item">
-                <img src="book3.jpg" alt="The Great Gatsby">
-                <p>The Great Gatsby</p>
-            </div>
+    <header class="navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="brand">ScreenToScript</a>
+            <nav class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="books.html">Books</a>
+                <a href="filmAdaptation.html">Films</a>
+                <a href="about.html">About</a>
+            </nav>
         </div>
-    </section>
-</main>
+    </header>
 
-<footer>
-    <p>© 2026 ScreenToScript</p>
-</footer>
+    <main class="container">
+        <section class="hero">
+            <h2>Bringing books and films together</h2>
+            <p>
+                Explore classic stories, compare original books with their screen adaptations,
+                and rate your favourites.
+            </p>
+            <img src="firstImage.jpg" alt="Featured visual for ScreenToScript" class="featured-image">
+        </section>
 
+        <section class="section-spacing">
+            <div class="section-heading">
+                <h2>Featured Comparisons</h2>
+                <p>Discover some of the most loved stories that made the journey from page to screen.</p>
+            </div>
+
+            <div class="comparison-container">
+                <article class="comparison-item">
+                    <img src="book1.jpg" alt="Romeo and Juliet">
+                    <div class="comparison-item-content">
+                        <h3>Romeo and Juliet</h3>
+                        <p>Shakespeare’s tragedy reimagined for the screen.</p>
+                        <a href="romeoJuliet.html" class="button">View Comparison</a>
+                    </div>
+                </article>
+
+                <article class="comparison-item">
+                    <img src="book2.jpg" alt="Pride and Prejudice">
+                    <div class="comparison-item-content">
+                        <h3>Pride and Prejudice</h3>
+                        <p>Jane Austen’s romance brought to life in cinema.</p>
+                        <a href="pridePrejudice.html" class="button">View Comparison</a>
+                    </div>
+                </article>
+
+                <article class="comparison-item">
+                    <img src="book3.jpg" alt="The Great Gatsby">
+                    <div class="comparison-item-content">
+                        <h3>The Great Gatsby</h3>
+                        <p>A dazzling adaptation of Fitzgerald’s iconic novel.</p>
+                        <a href="greatGatsby.html" class="button">View Comparison</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 ScreenToScript</p>
+    </footer>
+
+</div>
 </body>
 </html>

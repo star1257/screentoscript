@@ -3,57 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ScreenToScript - Film Titles</title>
+    <title>ScreenToScript - Films</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="site-wrapper">
 
-<header class="navbar">
-    <h1>ScreenToScript</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="books.html">Books</a>
-        <a href="filmAdaptation.html">Films</a>
-        <a href="about.html">About</a>
-    </nav>
-</header>
+    <header class="navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="brand">ScreenToScript</a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="books.html">Books</a>
+                <a href="filmAdaptation.html" class="active">Films</a>
+                <a href="about.html">About</a>
+            </nav>
+        </div>
+    </header>
 
-<main class="container">
-    <h2 class="page-title">Film Titles</h2>
-
-    <section class="media-list">
-        <div class="media-item">
-            <img src="film1.jpg" alt="Romeo and Juliet film">
-            <div class="media-text">
-                <h3>Romeo and Juliet</h3>
-                <p>Compare the book and film adaptation.</p>
-                <a href="romeoJuliet.html" class="button">View Comparison</a>
-            </div>
+    <main class="container">
+        <div class="page-header">
+            <h2 class="page-title">Film Adaptations</h2>
+            <p class="page-subtitle">
+                Explore the films inspired by famous books and compare them side by side with the originals.
+            </p>
         </div>
 
-        <div class="media-item">
-            <img src="film2.jpg" alt="Pride and Prejudice film">
-            <div class="media-text">
-                <h3>Pride and Prejudice</h3>
-                <p>Compare the book and film adaptation.</p>
-                <a href="pridePrejudice.html" class="button">View Comparison</a>
-            </div>
-        </div>
+        <section class="media-list">
+            <article class="media-item">
+                <img src="film1.jpg" alt="Romeo and Juliet film still">
+                <div class="media-text">
+                    <h3>Romeo + Juliet (1996)</h3>
+                    <p>A bold and modern take on Shakespeare’s timeless tragedy.</p>
+                    <a href="romeoJuliet.html" class="button">View Comparison</a>
+                </div>
+            </article>
 
-        <div class="media-item">
-            <img src="film3.jpg" alt="The Great Gatsby film">
-            <div class="media-text">
-                <h3>The Great Gatsby</h3>
-                <p>Compare the book and film adaptation.</p>
-                <a href="#" class="button">View Comparison</a>
-            </div>
-        </div>
-    </section>
-</main>
+            <article class="media-item">
+                <img src="film2.jpg" alt="Pride and Prejudice film still">
+                <div class="media-text">
+                    <h3>Pride &amp; Prejudice (2005)</h3>
+                    <p>A visually beautiful adaptation of Jane Austen’s classic romance.</p>
+                    <a href="pridePrejudice.html" class="button">View Comparison</a>
+                </div>
+            </article>
 
-<footer>
-    <p>© 2026 ScreenToScript</p>
-</footer>
+            <article class="media-item">
+                <img src="film3.jpg" alt="The Great Gatsby film still">
+                <div class="media-text">
+                    <h3>The Great Gatsby (2013)</h3>
+                    <p>A glamorous and dramatic screen version of Fitzgerald’s classic novel.</p>
+                    <a href="greatGatsby.html" class="button">View Comparison</a>
+                </div>
+            </article>
+        </section>
+    </main>
 
+    <footer>
+        <p>© 2026 ScreenToScript</p>
+    </footer>
+
+</div>
 </body>
 </html>

@@ -7,88 +7,92 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="site-wrapper">
 
-<header class="navbar">
-    <h1>ScreenToScript</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="books.html">Books</a>
-        <a href="filmAdaptation.html">Films</a>
-        <a href="about.html">About</a>
-    </nav>
-</header>
+    <header class="navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="brand">ScreenToScript</a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="books.html">Books</a>
+                <a href="filmAdaptation.html">Films</a>
+                <a href="about.html" class="active">About</a>
+            </nav>
+        </div>
+    </header>
 
-<main>
-    <section class="about-hero">
-        <h2>ABOUT</h2>
+    <main>
+        <section class="about-hero">
+            <h2>About</h2>
 
-        <div class="about-content">
-            <div class="about-text">
-                <h3>About This Project</h3>
-                <p>
-                    This website explores the connection between books and their film
-                    adaptations. It highlights well-known stories and shows how they
-                    have been transformed from page to screen.
-                </p>
-                <p>
-                    ScreenToScript is designed to help readers and film lovers compare
-                    original texts with their cinematic versions in a simple and
-                    engaging way.
-                </p>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>About This Project</h3>
+                    <p>
+                        ScreenToScript explores the connection between books and their
+                        film adaptations. It highlights well-known stories and shows
+                        how they have been transformed from page to screen.
+                    </p>
+                    <p>
+                        The site is designed for readers, students, and film lovers
+                        who want a simple and attractive way to compare original texts
+                        with their cinematic versions.
+                    </p>
+                </div>
+
+                <div class="about-image">
+                    <img src="bookStack.jpg" alt="Stack of books">
+                </div>
+            </div>
+        </section>
+
+        <section class="updates-section">
+            <div class="updates-wrapper">
+                <div class="updates-card">
+                    <h3>Get Weekly Updates</h3>
+                    <p>Be the first to hear about new comparisons, features, and reading picks.</p>
+
+                    <form class="updates-form">
+                        <input type="email" placeholder="Enter your email address" aria-label="Email address">
+                        <button type="submit">Sign Up</button>
+                    </form>
+
+                    <small>We care about your privacy.</small>
+                </div>
+
+                <div class="updates-image">
+                    <img src="flowers.jpg" alt="Decorative floral image">
+                </div>
+            </div>
+        </section>
+
+        <section class="about-footer-info">
+            <div class="info-box">
+                <h4>Address</h4>
+                <p>123 Reading Street<br>Booktown, London</p>
             </div>
 
-            <div class="about-image">
-                <img src="bookStack.jpg" alt="Stack of books">
-            </div>
-        </div>
-    </section>
-
-    <section class="updates-section">
-        <div class="updates-wrapper">
-            <div class="updates-card">
-                <h3>Get Weekly Updates</h3>
-                <p>Be the first to hear about new comparisons, features, and reading picks.</p>
-
-                <form class="updates-form">
-                    <input type="email" placeholder="Enter your email">
-                    <button type="submit">Sign Up</button>
-                </form>
-
-                <small>We care about your privacy.</small>
+            <div class="info-box">
+                <h4>Phone</h4>
+                <p>01234 567890</p>
             </div>
 
-            <div class="updates-image">
-                <img src="flowers.jpg" alt="Decorative background">
+            <div class="info-box">
+                <h4>Email</h4>
+                <p>info@screentoscript.com</p>
             </div>
-        </div>
-    </section>
 
-    <section class="about-footer-info">
-        <div class="info-box">
-            <h4>Address</h4>
-            <p>123 Reading Street<br>Booktown, London</p>
-        </div>
+            <div class="info-box">
+                <h4>Follow</h4>
+                <p>Instagram • Twitter • Facebook</p>
+            </div>
+        </section>
+    </main>
 
-        <div class="info-box">
-            <h4>Phone</h4>
-            <p>01234 567890</p>
-        </div>
+    <footer>
+        <p>© 2026 ScreenToScript</p>
+    </footer>
 
-        <div class="info-box">
-            <h4>Email</h4>
-            <p>info@screentoscript.com</p>
-        </div>
-
-        <div class="info-box">
-            <h4>Follow</h4>
-            <p>Instagram • Twitter • Facebook</p>
-        </div>
-    </section>
-</main>
-
-<footer>
-    <p>© 2026 ScreenToScript</p>
-</footer>
-
+</div>
 </body>
 </html>

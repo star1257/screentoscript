@@ -7,96 +7,108 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="site-wrapper">
 
-<header class="navbar">
-    <h1>ScreenToScript</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="books.html">Books</a>
-        <a href="filmAdaptation.html">Films</a>
-        <a href="about.html">About</a>
-    </nav>
-</header>
-
-<main class="comparison-page">
-    <section class="comparison-title">
-        <p class="small-heading">Book to Film Comparison</p>
-        <h2>Romeo &amp; Juliet to Romeo + Juliet (1996)</h2>
-    </section>
-
-    <section class="comparison-grid">
-        <div class="comparison-box image-box">
-            <img src="book1.jpg" alt="Romeo and Juliet book image">
+    <header class="navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="brand">ScreenToScript</a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="books.html">Books</a>
+                <a href="filmAdaptation.html">Films</a>
+                <a href="about.html">About</a>
+            </nav>
         </div>
+    </header>
 
-        <div class="comparison-box text-box">
-            <h3>The Book: Romeo and Juliet</h3>
-            <p>
-                Romeo and Juliet is a tragic play written by William Shakespeare.
-                It tells the story of two young lovers from feuding families whose
-                relationship ends in heartbreak.
-            </p>
-        </div>
+    <main class="comparison-page">
+        <section class="comparison-title">
+            <p class="small-heading">Book to Film Comparison</p>
+            <h2>Romeo &amp; Juliet to Romeo + Juliet (1996)</h2>
+        </section>
 
-        <div class="comparison-box text-box">
-            <h3>The Movie: Romeo + Juliet (1996)</h3>
-            <p>
-                Romeo + Juliet, directed by Baz Luhrmann, is a modern film adaptation
-                of Shakespeare’s play with a dramatic modern setting and strong visuals.
-            </p>
-        </div>
-
-        <div class="comparison-box image-box">
-            <img src="film1.jpg" alt="Romeo and Juliet film image">
-        </div>
-    </section>
-
-    <section class="rating-section">
-        <div class="rating-box">
-            <h4>Rate movie:</h4>
-            <div class="stars">
-                <input type="radio" id="movie5" name="movie-rating" value="5">
-                <label for="movie5" title="5 stars"></label>
-
-                <input type="radio" id="movie4" name="movie-rating" value="4">
-                <label for="movie4" title="4 stars"></label>
-
-                <input type="radio" id="movie3" name="movie-rating" value="3">
-                <label for="movie3" title="3 stars"></label>
-
-                <input type="radio" id="movie2" name="movie-rating" value="2">
-                <label for="movie2" title="2 stars"></label>
-
-                <input type="radio" id="movie1" name="movie-rating" value="1">
-                <label for="movie1" title="1 star"></label>
+        <section class="comparison-grid">
+            <div class="comparison-box image-box">
+                <img src="book1.jpg" alt="Romeo and Juliet book image">
             </div>
-        </div>
 
-        <div class="rating-box">
-            <h4>Rate book:</h4>
-            <div class="stars">
-                <input type="radio" id="book5" name="book-rating" value="5">
-                <label for="book5" title="5 stars"></label>
-
-                <input type="radio" id="book4" name="book-rating" value="4">
-                <label for="book4" title="4 stars"></label>
-
-                <input type="radio" id="book3" name="book-rating" value="3">
-                <label for="book3" title="3 stars"></label>
-
-                <input type="radio" id="book2" name="book-rating" value="2">
-                <label for="book2" title="2 stars"></label>
-
-                <input type="radio" id="book1" name="book-rating" value="1">
-                <label for="book1" title="1 star"></label>
+            <div class="comparison-box text-box">
+                <h3>The Book: Romeo and Juliet</h3>
+                <p>
+                    Romeo and Juliet is a tragic play written by William Shakespeare.
+                    It tells the story of two young lovers from feuding families whose
+                    relationship ends in heartbreak, making it one of literature’s most
+                    famous love stories.
+                </p>
             </div>
-        </div>
-    </section>
-</main>
 
-<footer>
-    <p>© 2026 ScreenToScript</p>
-</footer>
+            <div class="comparison-box text-box">
+                <h3>The Movie: Romeo + Juliet (1996)</h3>
+                <p>
+                    Directed by Baz Luhrmann, Romeo + Juliet places Shakespeare’s
+                    language into a vivid modern setting. It keeps the emotional core
+                    of the original while using bold visuals, music, and fast-paced style.
+                </p>
+            </div>
 
+            <div class="comparison-box image-box">
+                <img src="film1.jpg" alt="Romeo and Juliet film image">
+            </div>
+        </section>
+
+        <section class="rating-section">
+            <div class="rating-box">
+                <h4>Rate movie</h4>
+                <p>Goodreads-style rating</p>
+                <div class="stars rating-group" data-rating-key="romeo-movie-rating">
+                    <input type="radio" id="romeo-movie-5" name="romeo-movie-rating" value="5">
+                    <label for="romeo-movie-5" title="5 stars" aria-label="5 stars">★</label>
+
+                    <input type="radio" id="romeo-movie-4" name="romeo-movie-rating" value="4">
+                    <label for="romeo-movie-4" title="4 stars" aria-label="4 stars">★</label>
+
+                    <input type="radio" id="romeo-movie-3" name="romeo-movie-rating" value="3">
+                    <label for="romeo-movie-3" title="3 stars" aria-label="3 stars">★</label>
+
+                    <input type="radio" id="romeo-movie-2" name="romeo-movie-rating" value="2">
+                    <label for="romeo-movie-2" title="2 stars" aria-label="2 stars">★</label>
+
+                    <input type="radio" id="romeo-movie-1" name="romeo-movie-rating" value="1">
+                    <label for="romeo-movie-1" title="1 star" aria-label="1 star">★</label>
+                </div>
+                <div class="rating-value">Your rating: not rated yet</div>
+            </div>
+
+            <div class="rating-box">
+                <h4>Rate book</h4>
+                <p>Goodreads-style rating</p>
+                <div class="stars rating-group" data-rating-key="romeo-book-rating">
+                    <input type="radio" id="romeo-book-5" name="romeo-book-rating" value="5">
+                    <label for="romeo-book-5" title="5 stars" aria-label="5 stars">★</label>
+
+                    <input type="radio" id="romeo-book-4" name="romeo-book-rating" value="4">
+                    <label for="romeo-book-4" title="4 stars" aria-label="4 stars">★</label>
+
+                    <input type="radio" id="romeo-book-3" name="romeo-book-rating" value="3">
+                    <label for="romeo-book-3" title="3 stars" aria-label="3 stars">★</label>
+
+                    <input type="radio" id="romeo-book-2" name="romeo-book-rating" value="2">
+                    <label for="romeo-book-2" title="2 stars" aria-label="2 stars">★</label>
+
+                    <input type="radio" id="romeo-book-1" name="romeo-book-rating" value="1">
+                    <label for="romeo-book-1" title="1 star" aria-label="1 star">★</label>
+                </div>
+                <div class="rating-value">Your rating: not rated yet</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 ScreenToScript</p>
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
