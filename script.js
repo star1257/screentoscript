@@ -1,74 +1,71 @@
-const slides = document.querySelector(".slides");
-const slideImages = document.querySelectorAll(".slide");
+document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelector(".slides");
+    const slideItems = document.querySelectorAll(".slide");
+    const prevBtn = document.getElementById("prev");
+    const nextBtn = document.getElementById("next");
 
-const prevBtn = document.getElementById("prev");
-const nextBtn = document.getElementById("next");
+    if (slides && slideItems.length && prevBtn && nextBtn) {
+        let index = 0;
 
-let index = 0;
-let autoplay;
+        const updateSlide = () => {
+            slides.style.transform = `translateX(-${index * 100}%)`;
+        };
 
-function updateSlide() {
-    if (!slides) return;
-    slides.style.transform = `translateX(-${index * 100}%)`;
-}
+        const nextSlide = () => {
+            index = (index + 1) % slideItems.length;
+            updateSlide();
+        };
 
-function nextSlide() {
-    index = (index + 1) % slideImages.length;
-    updateSlide();
-}
+        const prevSlide = () => {
+            index = (index - 1 + slideItems.length) % slideItems.length;
+            updateSlide();
+        };
 
-function prevSlide() {
-    index = (index - 1 + slideImages.length) % slideImages.length;
-    updateSlide();
-}
+        nextBtn.addEventListener("click", nextSlide);
+        prevBtn.addEventListener("click", prevSlide);
 
-if (slides && slideImages.length > 0 && prevBtn && nextBtn) {
-    nextBtn.addEventListener("click", nextSlide);
-    prevBtn.addEventListener("click", prevSlide);
-
-    autoplay = setInterval(nextSlide, 4000);
-}
-
-document.querySelectorAll(".star-rating").forEach(rating => {
-    const stars = Array.from(rating.querySelectorAll("button"));
-    let selected = -1;
-
-    function paint(ratingIndex) {
-        stars.forEach((star, i) => {
-            star.classList.toggle("active", i <= ratingIndex);
-        });
+        setInterval(nextSlide, 4500);
     }
 
-    function clearHover() {
-        paint(selected);
-    }
+    document.querySelectorAll(".star-rating").forEach(rating => {
+        const buttons = Array.from(rating.querySelectorAll("button"));
+        let selected = -1;
 
-    stars.forEach((star, i) => {
-        star.addEventListener("mouseenter", () => paint(i));
-        star.addEventListener("click", () => {
-            selected = i;
-            paint(selected);
-        });
-        star.addEventListener("focus", () => paint(i));
-        star.addEventListener("blur", clearHover);
-        star.addEventListener("keydown", e => {
-            if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
+        const paint = (hoverIndex) => {
+            buttons.forEach((button, i) => {
+                button.classList.toggle("active", i <= hoverIndex);
+            });
+        };
+
+        const reset = () => paint(selected);
+
+        buttons.forEach((button, i) => {
+            button.addEventListener("mouseenter", () => paint(i));
+            button.addEventListener("click", () => {
                 selected = i;
                 paint(selected);
-            }
-            if (e.key === "ArrowRight" || e.key === "ArrowUp") {
-                e.preventDefault();
-                const next = Math.max(0, i - 1);
-                stars[next].focus();
-            }
-            if (e.key === "ArrowLeft" || e.key === "ArrowDown") {
-                e.preventDefault();
-                const prev = Math.min(stars.length - 1, i + 1);
-                stars[prev].focus();
-            }
+            });
+            button.addEventListener("focus", () => paint(i));
+            button.addEventListener("blur", reset);
+            button.addEventListener("keydown", (e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    selected = i;
+                    paint(selected);
+                }
+                if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+                    e.preventDefault();
+                    const prev = Math.min(buttons.length - 1, i + 1);
+                    buttons[prev].focus();
+                }
+                if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+                    e.preventDefault();
+                    const next = Math.max(0, i - 1);
+                    buttons[next].focus();
+                }
+            });
         });
-    });
 
-    rating.addEventListener("mouseleave", clearHover);
+        rating.addEventListener("mouseleave", reset);
+    });
 });

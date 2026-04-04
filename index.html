@@ -21,12 +21,19 @@
 <main class="container">
     <section class="hero">
         <h2>Bringing books and films together</h2>
-        <div class="slideshow">
+        <div class="slideshow" aria-label="Homepage slideshow">
             <div class="slides">
-                <div class="slide"><img src="firstImage.jpg" alt="Old Stone Building"></div>
-                <div class="slide"><img src="bookStack.jpg" alt="Stack of books"></div>
-                <div class="slide"><img src="flowers.jpg" alt="Flowers"></div>
+                <div class="slide">
+                    <img src="firstImage.jpg" alt="Elegant building exterior">
+                </div>
+                <div class="slide">
+                    <img src="bookStack.jpg" alt="Stack of books on a table">
+                </div>
+                <div class="slide">
+                    <img src="flowers.jpg" alt="Soft floral arrangement">
+                </div>
             </div>
+
             <button class="slide-btn prev" id="prev" aria-label="Previous slide">&#10094;</button>
             <button class="slide-btn next" id="next" aria-label="Next slide">&#10095;</button>
         </div>
@@ -35,18 +42,20 @@
     <section class="featured-comparisons">
         <h3>Featured Comparisons</h3>
         <div class="comparison-container">
-            <div class="comparison-item" onclick="window.location.href='romeoJuliet.html'">
+            <a class="comparison-item" href="romeoJuliet.html">
                 <img src="book1.jpg" alt="Romeo and Juliet">
                 <p>Romeo and Juliet</p>
-            </div>
-            <div class="comparison-item" onclick="window.location.href='pridePrejudice.html'">
+            </a>
+
+            <a class="comparison-item" href="pridePrejudice.html">
                 <img src="book2.jpg" alt="Pride and Prejudice">
                 <p>Pride and Prejudice</p>
-            </div>
-            <div class="comparison-item" onclick="window.location.href='#'">
+            </a>
+
+            <a class="comparison-item" href="filmAdaptation.html">
                 <img src="book3.jpg" alt="The Great Gatsby">
                 <p>The Great Gatsby</p>
-            </div>
+            </a>
         </div>
     </section>
 </main>
