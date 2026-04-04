@@ -178,6 +178,19 @@ a {
     display: block;
 }
 
+.caption {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    background: rgba(0,0,0,0.6);
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -204,6 +217,11 @@ a {
     background-color: rgba(0,0,0,0.8);
 }
 
+.dots-container {
+    text-align: center;
+    margin-top: 12px;
+}
+
 .dot {
     cursor: pointer;
     height: 12px;
@@ -215,7 +233,7 @@ a {
     transition: background-color 0.3s ease;
 }
 
-.active, .dot:hover {
+.active-dot, .dot:hover {
     background-color: #717171;
 }
 
@@ -256,7 +274,7 @@ a {
     transform: translateY(-4px);
 }
 
-/* UNIFIED IMAGE SIZING (force all comparison/media images to 340px) */
+/* UNIFIED IMAGE SIZING */
 .comparison-item img,
 .media-item img,
 .comparison-box.image-box img,
@@ -616,7 +634,7 @@ footer {
     font-weight: 700;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE (FIXED @media SYNTAX) ===== */
 @media (max-width: 980px) {
     .comparison-container {
         grid-template-columns: 1fr;

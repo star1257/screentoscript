@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ScreenToScript - Home</title>
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="site-wrapper">
@@ -29,10 +29,10 @@
                 and rate your favourites.
             </p>
 
-            <!-- SLIDESHOW WITH BOOK/FILM THEMED IMAGES (always work) -->
-            <div class="slideshow-container">
+            <!-- SLIDESHOW SECTION - FIXED -->
+            <div class="slideshow-container" id="slideshowContainer">
                 <div class="mySlides fade">
-                    <img src="https://picsum.photos/id/20/1200/460" alt="Books" style="width:100%; height:460px; object-fit:cover;">
+                    <img src="https://picsum.photos/id/20/1200/460" alt="Classic Literature" style="width:100%; height:460px; object-fit:cover;">
                     <div class="caption">Classic Literature</div>
                 </div>
                 <div class="mySlides fade">
@@ -43,14 +43,10 @@
                     <img src="https://picsum.photos/id/84/1200/460" alt="Reading" style="width:100%; height:460px; object-fit:cover;">
                     <div class="caption">From Page to Screen</div>
                 </div>
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <a class="prev" id="prevSlide">&#10094;</a>
+                <a class="next" id="nextSlide">&#10095;</a>
             </div>
-            <div style="text-align:center; margin-top:12px;">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
+            <div class="dots-container" id="dotsContainer"></div>
         </section>
 
         <section class="section-spacing">
