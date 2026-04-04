@@ -1,57 +1,16 @@
-document.addEventListener("DOMContent", () => {
-    // ========== DARK MODE TOGGLE ==========
-    const navbarInner = document.querySelector('.navbar-inner .nav-links');
-    if (navbarInner) {
-        const toggleBtn = document.createElement('button');
-        toggleBtn.innerHTML = '🌙';
-        toggleBtn.classList.add('dark-mode-toggle');
-        toggleBtn.setAttribute('aria-label', 'Dark mode');
-        navbarInner.appendChild(toggleBtn);
-
-        // Load saved preference
-        const darkMode = localStorage.getItem('darkMode');
-        if (darkMode === 'enabled') {
-            document.body.classList.add('dark-mode');
-            toggleBtn.innerHTML = '☀️';
-        }
-
-        toggleBtn.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            if (document.body.classList.contains('dark-mode')) {
-                localStorage.setItem('darkMode', 'enabled');
-                toggleBtn.innerHTML = '☀️';
-            } else {
-                localStorage.setItem('darkMode', 'disabled');
-                toggleBtn.innerHTML = '🌙';
-            }
-        });
-    }
-
-    // ========== READING PROGRESS BAR ==========
-    const progressContainer = document.createElement('div');
-    progressContainer.className = 'progress-container';
-    const progressBar = document.createElement('div');
-    progressBar.className = 'progress-bar';
-    progressContainer.appendChild(progressBar);
-    document.body.prepend(progressContainer);
-
-    window.addEventListener('scroll', () => {
-        const winScroll = document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-        progressBar.style.width = scrolled + '%';
-    });
-
+document.addEventListener("DOMContentLoaded", () => {
     // ========== RATING SYSTEM ==========
     const ratingGroups = document.querySelectorAll(".rating-group");
+
     ratingGroups.forEach((group) => {
         const inputs = group.querySelectorAll('input[type="radio"]');
         const ratingBox = group.closest('.rating-box');
         const output = ratingBox ? ratingBox.querySelector(".rating-value") : null;
         const storageKey = group.dataset.ratingKey;
+
         if (!output) return;
 
-        // Load saved rating
+        // Load saved rating from localStorage
         const savedRating = localStorage.getItem(storageKey);
         if (savedRating) {
             const savedInput = group.querySelector(`input[value="${savedRating}"]`);
@@ -61,7 +20,7 @@ document.addEventListener("DOMContent", () => {
             }
         }
 
-        // Add change listeners
+        // Add event listeners
         inputs.forEach((input) => {
             input.addEventListener("change", (e) => {
                 const value = e.target.value;
@@ -96,26 +55,4 @@ document.addEventListener("DOMContent", () => {
             }
         });
     }
-
-    // ========== BACK TO TOP BUTTON ==========
-    const backToTopBtn = document.createElement('button');
-    backToTopBtn.id = 'backToTop';
-    backToTopBtn.innerHTML = '↑';
-    backToTopBtn.setAttribute('aria-label', 'Back to top');
-    document.body.appendChild(backToTopBtn);
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTopBtn.style.display = 'flex';
-        } else {
-            backToTopBtn.style.display = 'none';
-        }
-    });
-
-    backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
 });

@@ -28,7 +28,6 @@ body {
     background: #fcfbfe;
     color: var(--text);
     line-height: 1.6;
-    transition: background 0.3s, color 0.3s;
 }
 
 img {
@@ -107,21 +106,6 @@ a {
 .nav-links a:hover::after,
 .nav-links a.active::after {
     width: 100%;
-}
-
-.dark-mode-toggle {
-    background: none;
-    border: none;
-    font-size: 1.4rem;
-    cursor: pointer;
-    padding: 0 8px;
-    margin-left: 10px;
-    color: var(--text);
-    transition: transform 0.2s;
-}
-
-.dark-mode-toggle:hover {
-    transform: scale(1.1);
 }
 
 /* ===== LAYOUT ===== */
@@ -275,7 +259,7 @@ a {
     opacity: 0;
 }
 
-/* ===== MEDIA LIST PAGES (BOOKS & FILMS) ===== */
+/* ===== MEDIA LIST PAGES ===== */
 .page-header {
     text-align: center;
     margin-bottom: 32px;
@@ -588,108 +572,6 @@ footer {
     background: var(--lavender);
     color: #4a4152;
     font-weight: 700;
-}
-
-/* ===== BACK TO TOP BUTTON ===== */
-#backToTop {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    background: var(--lavender-dark);
-    color: var(--text);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 24px;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: all 0.3s ease;
-    z-index: 100;
-}
-
-#backToTop:hover {
-    background: var(--lavender);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-}
-
-/* ===== READING PROGRESS BAR ===== */
-.progress-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: transparent;
-    z-index: 1000;
-}
-
-.progress-bar {
-    height: 4px;
-    background: var(--star-filled);
-    width: 0%;
-    transition: width 0.2s ease;
-}
-
-/* ===== DARK MODE ===== */
-body.dark-mode {
-    background: #1a1a2e;
-    color: #e0e0e0;
-}
-
-body.dark-mode .navbar,
-body.dark-mode footer {
-    background: #16213e;
-}
-
-body.dark-mode .comparison-item,
-body.dark-mode .media-item,
-body.dark-mode .info-box,
-body.dark-mode .updates-card,
-body.dark-mode .about-text,
-body.dark-mode .comparison-box {
-    background: #0f3460;
-    border-color: #1a4a6e;
-    color: #e0e0e0;
-}
-
-body.dark-mode .button {
-    background: #533483;
-    color: #fff;
-}
-
-body.dark-mode .button:hover {
-    background: #6c45a3;
-}
-
-body.dark-mode .rating-section {
-    background: #0f3460;
-}
-
-body.dark-mode .rating-box {
-    background: rgba(255,255,255,0.1);
-}
-
-body.dark-mode .stars label {
-    color: #888;
-}
-
-body.dark-mode .stars input:checked ~ label {
-    color: #f4c542;
-}
-
-body.dark-mode .featured-image,
-body.dark-mode .comparison-item img,
-body.dark-mode .media-item img {
-    filter: brightness(0.9);
-}
-
-body.dark-mode .dark-mode-toggle {
-    color: #f4c542;
 }
 
 /* ===== RESPONSIVE ===== */
