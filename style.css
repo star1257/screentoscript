@@ -45,7 +45,7 @@ a {
     flex-direction: column;
 }
 
-/* ===== NAVBAR (GRID, NO WRAP) ===== */
+/* ===== NAVBAR ===== */
 .navbar {
     background: var(--lavender);
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
@@ -156,95 +156,12 @@ a {
     margin: 0 auto 26px;
 }
 
-/* ===== SLIDESHOW ===== */
-.slideshow-container {
-    position: relative;
-    max-width: 100%;
-    margin: auto;
-    border-radius: 22px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-}
-
-.mySlides {
-    display: none;
-    position: relative;
-}
-
-.mySlides img {
+.featured-image {
     width: 100%;
-    height: 460px;
+    height: clamp(280px, 45vw, 480px);
     object-fit: cover;
-    display: block;
-}
-
-.caption {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    color: white;
-    background: rgba(0,0,0,0.6);
-    padding: 10px;
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 24px;
-    transition: 0.3s;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    background-color: rgba(0,0,0,0.5);
-    text-decoration: none;
-}
-
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-}
-
-.dots-container {
-    text-align: center;
-    margin-top: 12px;
-}
-
-.dot {
-    cursor: pointer;
-    height: 12px;
-    width: 12px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-
-.active-dot, .dot:hover {
-    background-color: #717171;
-}
-
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
+    border-radius: 22px;
+    box-shadow: var(--shadow);
 }
 
 /* ===== FEATURED COMPARISONS ===== */
@@ -634,7 +551,7 @@ footer {
     font-weight: 700;
 }
 
-/* ===== RESPONSIVE (FIXED @media SYNTAX) ===== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 980px) {
     .comparison-container {
         grid-template-columns: 1fr;
@@ -686,13 +603,6 @@ footer {
     .updates-image img {
         height: 280px !important;
     }
-    .mySlides img {
-        height: 320px;
-    }
-    .prev, .next {
-        font-size: 18px;
-        padding: 10px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -709,9 +619,6 @@ footer {
     .about-image img,
     .updates-image img {
         height: 220px !important;
-    }
-    .mySlides img {
-        height: 240px;
     }
     .text-box h3,
     .media-text h3 {
