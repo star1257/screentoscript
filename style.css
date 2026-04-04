@@ -156,7 +156,7 @@ a {
     margin: 0 auto 26px;
 }
 
-/* SLIDESHOW STYLES */
+/* SLIDESHOW STYLES - ensures only one image shows at a time */
 .slideshow-container {
     position: relative;
     max-width: 100%;
@@ -260,7 +260,7 @@ a {
     transform: translateY(-4px);
 }
 
-/* UNIFIED IMAGE SIZING - with !important to override any server issues */
+/* UNIFIED IMAGE SIZING */
 .comparison-item img,
 .media-item img,
 .comparison-box.image-box img,
@@ -432,12 +432,6 @@ a {
 .rating-box h4 {
     margin-bottom: 6px;
     font-size: 1rem;
-}
-
-.rating-box p {
-    color: #5b5363;
-    font-size: 0.95rem;
-    margin-bottom: 14px;
 }
 
 /* GOODREADS STYLE STAR RATING */

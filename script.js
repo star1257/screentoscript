@@ -1,17 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // ========== RATING SYSTEM (FIXED) ==========
+    // ========== RATING SYSTEM (Simplified text) ==========
     const ratingGroups = document.querySelectorAll(".rating-group");
 
     ratingGroups.forEach((group) => {
         const inputs = group.querySelectorAll('input[type="radio"]');
-        // Find the rating-value element inside the same .rating-box
         const ratingBox = group.closest('.rating-box');
         const output = ratingBox ? ratingBox.querySelector(".rating-value") : null;
         const storageKey = group.dataset.ratingKey;
 
         if (!output) return;
 
-        // Load saved rating from localStorage
+        // Load saved rating
         const savedRating = localStorage.getItem(storageKey);
         if (savedRating) {
             const savedInput = group.querySelector(`input[value="${savedRating}"]`);
@@ -21,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        // Add event listeners to radio buttons
+        // Add event listeners
         inputs.forEach((input) => {
             input.addEventListener("change", (e) => {
                 const value = e.target.value;
@@ -33,13 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateText(output, value) {
         const labels = {
-            1: "1 star",
-            2: "2 stars",
-            3: "3 stars",
-            4: "4 stars",
-            5: "5 stars"
+            1: "⭐ 1 star",
+            2: "⭐⭐ 2 stars",
+            3: "⭐⭐⭐ 3 stars",
+            4: "⭐⭐⭐⭐ 4 stars",
+            5: "⭐⭐⭐⭐⭐ 5 stars"
         };
-        output.textContent = `Your rating: ${labels[value]}`;
+        output.textContent = labels[value];
     }
 
     // ========== SLIDESHOW ==========
@@ -90,17 +89,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 4000);
     }
 
-    // Initialize slideshow if it exists on page
+    // Initialize slideshow if exists
     if (document.getElementsByClassName("slideshow-slide").length > 0) {
         showSlides(slideIndex);
         startAutoSlide();
-        
-        // Make functions global so onclick attributes work
         window.changeSlide = changeSlide;
         window.currentSlide = currentSlide;
     }
 
-    // ========== NEWSLETTER SIGNUP (optional) ==========
+    // Newsletter signup
     const newsletterForm = document.querySelector('.updates-form');
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', (e) => {
