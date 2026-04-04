@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pride & Prejudice Comparison</title>
+    <title>ScreenToScript - Pride & Prejudice</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,49 +20,66 @@
 
 <main class="comparison-page">
     <section class="comparison-title">
-        <h2>Pride & Prejudice vs Film (2005)</h2>
+        <p class="small-heading">Book to Film Comparison</p>
+        <h2>Pride &amp; Prejudice to Pride &amp; Prejudice (2005)</h2>
     </section>
 
     <section class="comparison-grid">
         <div class="comparison-box image-box">
-            <img src="book2.jpg" alt="Book">
+            <img src="book2.jpg" alt="Pride and Prejudice book image">
         </div>
 
         <div class="comparison-box text-box">
-            <h3>The Book</h3>
-            <p>A classic novel by Jane Austen exploring love and class.</p>
+            <h3>The Book: Pride and Prejudice</h3>
+            <p>
+                Pride and Prejudice is a novel by Jane Austen that follows the
+                relationship between Elizabeth Bennet and Mr Darcy.
+            </p>
         </div>
 
         <div class="comparison-box text-box">
-            <h3>The Film</h3>
-            <p>A visually beautiful adaptation directed by Joe Wright.</p>
+            <h3>The Movie: Pride &amp; Prejudice (2005)</h3>
+            <p>
+                Pride &amp; Prejudice (2005), directed by Joe Wright, is a film
+                adaptation with beautiful cinematography and strong performances.
+            </p>
         </div>
 
         <div class="comparison-box image-box">
-            <img src="film2.jpg" alt="Film">
+            <img src="film2.jpg" alt="Pride and Prejudice film image">
         </div>
     </section>
 
     <section class="rating-section">
         <div class="rating-box">
-            <h4>Rate Movie:</h4>
-            <div class="star-rating" role="radiogroup" aria-label="Rate movie">
-                <button type="button" aria-label="1 star" aria-pressed="false"></button>
-                <button type="button" aria-label="2 stars" aria-pressed="false"></button>
-                <button type="button" aria-label="3 stars" aria-pressed="false"></button>
-                <button type="button" aria-label="4 stars" aria-pressed="false"></button>
-                <button type="button" aria-label="5 stars" aria-pressed="false"></button>
+            <h4>Rate movie:</h4>
+            <div class="stars">
+                <input type="radio" id="movie5-p" name="movie-rating-p" value="5">
+                <label for="movie5-p" title="5 stars">★</label>
+                <input type="radio" id="movie4-p" name="movie-rating-p" value="4">
+                <label for="movie4-p" title="4 stars">★</label>
+                <input type="radio" id="movie3-p" name="movie-rating-p" value="3">
+                <label for="movie3-p" title="3 stars">★</label>
+                <input type="radio" id="movie2-p" name="movie-rating-p" value="2">
+                <label for="movie2-p" title="2 stars">★</label>
+                <input type="radio" id="movie1-p" name="movie-rating-p" value="1">
+                <label for="movie1-p" title="1 star">★</label>
             </div>
         </div>
 
         <div class="rating-box">
-            <h4>Rate Book:</h4>
-            <div class="star-rating" role="radiogroup" aria-label="Rate book">
-                <button type="button" aria-label="1 star" aria-pressed="false"></button>
-                <button type="button" aria-label="2 stars" aria-pressed="false"></button>
-                <button type="button" aria-pressed="false"></button>
-                <button type="button" aria-pressed="false"></button>
-                <button type="button" aria-pressed="false"></button>
+            <h4>Rate book:</h4>
+            <div class="stars">
+                <input type="radio" id="book5-p" name="book-rating-p" value="5">
+                <label for="book5-p" title="5 stars">★</label>
+                <input type="radio" id="book4-p" name="book-rating-p" value="4">
+                <label for="book4-p" title="4 stars">★</label>
+                <input type="radio" id="book3-p" name="book-rating-p" value="3">
+                <label for="book3-p" title="3 stars">★</label>
+                <input type="radio" id="book2-p" name="book-rating-p" value="2">
+                <label for="book2-p" title="2 stars">★</label>
+                <input type="radio" id="book1-p" name="book-rating-p" value="1">
+                <label for="book1-p" title="1 star">★</label>
             </div>
         </div>
     </section>
@@ -72,6 +89,5 @@
     <p>© 2026 ScreenToScript</p>
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
