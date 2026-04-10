@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ScreenToScript - Pride & Prejudice</title>
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
 <div class="site-wrapper">
@@ -12,12 +12,19 @@
     <header class="navbar">
         <div class="navbar-inner">
             <a href="index.html" class="brand">ScreenToScript</a>
-            <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="books.html">Books</a>
-                <a href="filmAdaptation.html">Films</a>
-                <a href="about.html">About</a>
-            </nav>
+            <div class="nav-right">
+                <nav class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="books.html">Books</a>
+                    <a href="filmAdaptation.html">Films</a>
+                    <a href="about.html">About</a>
+                </nav>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search books or films..." aria-label="Search">
+                    <button id="searchButton" class="search-btn" aria-label="Search">🔍</button>
+                    <div id="searchResults" class="search-results"></div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -85,6 +92,6 @@
     </footer>
 
 </div>
-<script src="script.js"></script>
+<script src="script.js?v=8"></script>
 </body>
 </html>

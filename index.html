@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ScreenToScript - Home</title>
-    <link rel="stylesheet" href="style.css?v=7">
+    <link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
 <div class="site-wrapper">
@@ -12,12 +12,19 @@
     <header class="navbar">
         <div class="navbar-inner">
             <a href="index.html" class="brand">ScreenToScript</a>
-            <nav class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="books.html">Books</a>
-                <a href="filmAdaptation.html">Films</a>
-                <a href="about.html">About</a>
-            </nav>
+            <div class="nav-right">
+                <nav class="nav-links">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="books.html">Books</a>
+                    <a href="filmAdaptation.html">Films</a>
+                    <a href="about.html">About</a>
+                </nav>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search books or films..." aria-label="Search">
+                    <button id="searchButton" class="search-btn" aria-label="Search">🔍</button>
+                    <div id="searchResults" class="search-results"></div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -28,7 +35,6 @@
                 Explore classic stories, compare original books with their screen adaptations,
                 and rate your favourites.
             </p>
-            <!-- SINGLE STATIC IMAGE (replace 'firstImage.jpg' with your own file) -->
             <img src="https://picsum.photos/id/20/1120/460" alt="Books and Film" class="featured-image">
         </section>
 
@@ -74,6 +80,6 @@
     </footer>
 
 </div>
-<script src="script.js"></script>
+<script src="script.js?v=8"></script>
 </body>
 </html>
